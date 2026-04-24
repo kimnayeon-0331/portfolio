@@ -1,0 +1,563 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 2%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: #FAF9F6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;/*전체 페이지가 최소 화면 한칸을 차지*/
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /*header는 왼쪽 끝, aside는 오른쪽 끝으로*/
+  align-items: flex-start;     
+  /*width: 1745px;*/
+  /*background-color: lightblue;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 80px;
+  z-index: 1000; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #FAF9F6;
+}
+
+.logo {
+  /*background-color: lightgoldenrodyellow;*/
+  padding-left: 15px;
+}
+
+.logo img {
+  display: block;
+  height: 61px; 
+  width: 270px;
+  object-fit: cover;
+}
+
+/* Aside: 검색창과 버튼 정렬 */
+aside {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  /*background-color: lightseagreen;*/
+}
+
+aside a {
+  color: #000;
+  font-size: 14px;
+}
+
+.search-form {
+  display: flex;
+  border-radius: 7px;
+  width: 271px;
+  height: 45px;
+  border: 4px solid #A0C8F5;
+  margin-top: 10px;
+}
+
+.search-form img {
+  width: 15.49px;
+  height: 15.49px;
+  margin-top: 10px;
+  margin-right: 11px;
+  cursor: pointer;
+}
+
+/*검색하는 공간*/
+.search-form input {
+  background: none;
+  outline: none;
+  border: none;
+  width: 253px;
+  margin-left: 10px;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  margin-top: 171.5px;
+  height: 80px;
+  display: flex;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  margin-left: 50px;
+  /*background-color: lightcoral;*/
+  position: sticky; /*스크롤 하다가 지정한 위치에 고정*/
+  top: 80px; /*헤더 높이만큼 띄워서 고정 (헤더와 안 겹치게)*/
+  width: 170px;
+  height: calc(100vh - 80px); /*화면 높이에서 헤더 높이 뺀 만큼*/
+  background-color: #f9f9f9;
+  flex-shrink: 0; /*크기가 줄어들지 않도록 고정*/
+}
+
+nav h2 {
+  font-size: 26px;
+  color: #333;
+}
+
+nav a {
+  color: #333;
+  font-weight: 500;
+  font-size: 22px;
+  display: flex;
+  align-items: center; /*세로 중앙 정렬*/
+  margin-left: 18px;
+  transition: all 0.2s ease-in-out; /*호버시 부드러운 효과*/
+}
+
+nav a img {
+  margin-right: 9px;
+  width: 40px; 
+  height: auto;
+  flex-shrink: 0; /*이미지 찌그러지지않도록 고정*/
+  object-fit: contain; /*아이콘 가운데 정렬*/
+}
+
+nav a:nth-of-type(1):hover {
+  color: #ffa0c4;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+nav a:nth-of-type(2):hover {
+  color: #6ab5f3;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+nav a:nth-of-type(3):hover {
+  color: #71e271;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/*메인 우측 영역*/
+section {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+/*회원가입*/
+article{
+  margin-left: 175px;
+  max-width: 1602px;
+}
+
+article h1 {
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #2B2B2B;
+}
+
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/*회원 구분*/
+.type-table {
+  border-top: 1px solid #939393;
+  border-bottom: 1px solid #939393; 
+  margin-bottom: 57px;
+  width: 100%;
+}
+
+.type-table th {
+  width: 120px; 
+  border-right: 1px solid #333;  /*오른쪽 세로 줄*/
+  padding: 20px;
+  text-align: left;
+}
+
+.type-table td label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; 
+  font-size: 18px;
+  cursor: pointer;
+  padding-top: 14px;
+  margin-left: 39px;
+}
+
+/*라디오 버튼 색상 조절*/
+.type-table input[type="radio"] {
+  margin: 0;
+  accent-color: #333;/*버튼 체크 색상*/
+}
+
+/*회원구분 테이블과 섞이지 않도록 기본 스타일만 유지*/
+.form-table:not(.type-table) th {
+  width: 180px;
+  border-right: none; /*세로줄 제거*/
+}
+
+/*회원가입 폼*/
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #939393;
+}
+
+.info-header h2 {
+  font-size: 22px;
+  padding-bottom: 17px;
+  font-weight: 500;
+}
+
+.info-header p {
+  font-size: 12px;
+  padding-bottom: 17px;
+}
+
+.info-header span {
+  color: #FF0B0F;
+}
+
+.info-table {
+  width: 100%;
+  border-bottom: 2px solid #939393;
+  margin-bottom: 57px;
+  margin-top: 17px;
+}
+
+.info-table tr:last-child td,
+.info-table tr:last-child th {
+  padding-bottom: 17px; 
+}
+
+.form-table th {
+  text-align: left;
+  font-size: 18px;
+  color: #171717;
+  font-weight: 400;
+  vertical-align: middle; /*수평 방향(좌우) 중앙 정렬*/
+}
+
+.form-table td {
+  color: #2B2B2B;
+  display: flex;
+  align-items: center; /*수직 방향(상하) 중앙 정렬*/
+  gap: 10px; 
+  padding: 8px 10px 8px 10px;
+  flex-wrap: wrap; /*자식이 넘치면 다음줄로 보냄*/
+}
+
+/*투명벽 만들어서 우편번호 검색버튼, 주소 입력칸 강제로 줄바꿈*/
+.form-table td button::after {
+  content: "";
+  flex-basis: 100%; /*이 벽이 100%를 차지해서 다음 요소를 밀어냄*/
+  width: 0;
+  height: 0;
+}
+
+.form-table span {
+  color: #FF101C;
+  margin-left: 2px;
+}
+
+.form-table small {
+  color: #333;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"] {
+  border: 1px solid #868686;
+  color: #000;
+  padding: 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+input {
+  background-color: #dddddd26;
+}
+
+input:focus {
+  border-color: #333;
+}
+
+/*입력창 크기*/
+.sign01 {
+  width: 330px;
+  height: 35px;
+}
+
+.address {
+  display: block;
+  width: 430px;
+  margin-right: 100%;
+  flex: none;
+}
+
+.mail { 
+  width: 430px;
+  height: 35px;
+}
+
+.tell { 
+  width: 103px;
+  text-align: center;
+  height: 35px;
+}
+
+/* 주소 검색 버튼 */
+.form-table button {
+  background-color: #DADADA;
+  color: #272727;
+  border: 1px solid #333333;
+  border-radius: 3px;
+  padding: 3px 5px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/*주소(th)를 우편번호 입력창 첫 줄에 맞춤*/
+.form-table tr:has(.address) th { /*'address'라는 클래스를 가진 줄만 찾아라*/
+  vertical-align: top;
+  padding-top: 18px;
+}
+
+/*우리 아이 정보 등록하고 생일 쿠폰 받기*/
+.pet-box {
+  background-color: #F4F4F4;
+  border: 3px solid #797979;
+  border-radius: 20px;
+  padding: 40px;
+  margin: 60px 0;
+  color: #333;
+}
+
+.pet-box h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.pet-box h3 img {
+  width: 45px; 
+}
+
+input[type="number"] {
+  all: unset; /*브라우저가 준 모든 기본 스타일을 초기화 */
+  box-sizing: border-box;
+  border: 1px solid #868686;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.year {
+  width: 120px !important;
+  height: 35px !important;
+}
+
+.day {
+  width: 70px !important;
+  height: 35px !important;
+}
+
+/*박스 안 입력창*/
+.pet-box input[type="text"] {
+  border: 1px solid #868686;
+  color: #333;
+}
+
+/*반려동물 종 폰트 조절*/
+.form-table td label {
+  font-size: 16px; 
+  font-weight: 500; 
+  color: #333;  
+  
+ /*라디오 버튼과 글자 사이 간격 및 정렬*/
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/*라디오 버튼크기 조절*/
+.form-table td label input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  margin: 0; /*기본 여백 제거*/
+  accent-color: #333;
+}
+
+/*이름, 추천인 아이디 너비, 높이 조절*/
+.pet-name {
+  width: 220px;
+  height: 35px; 
+}
+
+.recom-id {
+  width: 260px; 
+  height: 35px;
+}
+
+/*pet-box 안의 th 스타일*/
+.pet-box .form-table th {
+  font-size: 16px;
+  font-weight: 400;
+  color: #171717;
+}
+
+/*약관 동의 영역*/
+.agree-box {
+  padding-top: 30px;
+}
+
+.agree-box h3 {
+  font-size: 35px;
+  color: #2B2B2B;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.agree-box .check label {
+  font-size: 16px;
+}
+
+.agree-box .check:first-of-type label {
+  font-size: 19px;
+}
+
+.check label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.check a {
+  color: #454545;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.agree-box input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #333;
+  cursor: pointer;
+}
+
+.submit-btn {
+  display: block;
+  width: 250px;
+  height: 50px;
+  background-color: #2F2F2F;
+  color: #FFF6F6;
+  border: none;
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 57px auto;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #444;
+}
+
+/*푸터영역*/
+footer {
+  background-color: #D9D9D9; 
+  padding: 18px 0 36px 35px;
+  line-height: 1.7;
+  margin-top: 90px;
+}
+
+.footer-inner {
+  max-width: 1920px;
+}
+
+.footer-logo {
+  display: block;
+  width: 302px;
+  height: 123px;
+}
+
+.footer-area p {
+  font-weight: 400;
+  color: #666464;
+  font-size: 13px;
+}
+
+.service {
+  font-size: 23px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 4%;
+  padding-bottom: 29px;
+  display: flex;
+  flex-direction: column;/*세로로 정렬*/
+}
+
+.service span {
+  font-size: 10px;
+  font-weight: normal;
+  color: #666464;
+  margin-left: 110px;
+}
+
+/*하단 메뉴 가로 배치*/
+.footer-menu {
+  display: flex;
+  list-style: none;
+  border-top: 3px solid #C7C7C7;
+  padding-top: 14px;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.footer-menu li a {
+  color: #333;
+  position: relative;
+}

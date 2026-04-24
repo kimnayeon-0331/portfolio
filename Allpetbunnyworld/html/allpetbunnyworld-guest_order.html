@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLPETBUNNYWORLD-Login</title>
+    <link rel="stylesheet" href="../css/allpetbunnyworld-guest_order.css">
+</head>
+<body>
+    <header>
+    <!--로고, 로그인, 회원가입, 공지사항-->
+    <a href="../html/allpetbunnyworld-main.html" class="logo">
+    <img src="../img/main/logo_png.png" alt="img">
+    </a>
+
+    <aside>
+      <form class="search-form">
+        <input type="search">
+        <img src="../img/main/find.png" alt="icon">
+      </form>
+      <a href="../html/allpetbunnyworld-login.html">로그인</a>
+      <a href="../html/allpetbunnyworld-signup.html">회원가입</a>
+      <a href="../html/allpetbunnyworld-sub04.html">공지사항</a>
+    </aside>
+  </header>
+
+  <section>
+    <!--서브 메뉴 좌측에 고정-->
+    <nav>
+      <h2>MAIN MENU</h2>
+      <a href="../html/allpetbunnyworld-sub01.html"><img src="../img/main/Dog.png" alt="img">강아지</a>
+      <a href="../html/allpetbunnyworld-sub02.html"><img src="../img/main/Cat.png" alt="img">고양이</a>
+      <a href="../html/allpetbunnyworld-sub03.html"><img src="../img/main/Carrot.png" alt="img">소동물</a>
+    </nav>
+
+    <article>
+        <div class="log-container">
+            <h2>비회원 주문조회</h2>
+            <form class="login">
+                <div class="group">
+                    <div class="fields">
+                        <div class="field">
+                            <label>주문자명</label>
+                            <input type="text" name="name">
+                        </div>
+                        <div class="field">
+                            <label>주문번호</label>
+                            <input type="password" name="order-num">
+                        </div>
+                    </div>
+                    <button type="submit" class="login-btn">비회원<br>주문조회</button>
+                </div>
+                <div class="tip-box">
+                    <img src="../img/guest_order/tip.png" alt="img">
+                    <p>주문번호와 비밀번호를 잊으신 경우, 고객센터로 문의하여 주시기 바랍니다.</p>
+                </div>
+                <div class="cancel">
+                    <a href="../html/allpetbunnyworld-login.html" class="back">돌아가기</a>
+                </div>
+            </form>
+        </div>
+    </article>
+</section>
+<!--푸터영역-->
+<footer>
+    <div class="footer-inner">
+        <img src="../img/main/logo_png.png" alt="logo" class="footer-logo">
+        <div class="footer-area">
+            <p>
+                상호명 : 주식회사제이엠트레이딩  |  대표 : 박창노<br>
+                주소 : 경기도 김포시 대곶면 삭시갈마로 98-72<br>
+                사업자 등록번호 : 893-86-00430 [사업자정보 확인]<br>
+                통신판매업 신고 번호 : 2022-경기김포-2693<br>
+                개인정보보호책임자 : 정용록<br>
+                메일 : jmpet@daum.net
+            </p>
+                
+            <div class="service">
+                고객센터 : 031-984-4474<span>(평일 오전 10시~오후 5시 ※토, 일, 공휴일 휴무)</span>
+            </div>
+        </div>
+        <ul class="footer-menu">
+            <li><a href="#">개인정보처리방침</a></li>
+            <li>ㅣ</li>
+            <li><a href="#">이용약관</a></li>
+            <li>ㅣ</li>
+            <li><a href="#">이용안내</a></li>
+            <li>ㅣ</li>
+            <li><a href="#">회사소개</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>

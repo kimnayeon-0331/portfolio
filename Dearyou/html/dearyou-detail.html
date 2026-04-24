@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dear you - 제품 상세페이지</title>
+  <link rel="stylesheet" href="../css/dearyou-detail.css">
+</head>
+<body>
+ <!--헤더 영역-->
+ <header class="header">
+  <div class="container header_inner">
+    <a href="./Dearyou-main.html"><img src="../img/main/logo.png" alt="img"></a>
+    
+    <!--검색창-->
+    <form class="search-form">
+    <div class="search-box">
+       <input type="search" name="q">
+        <button type="submit">
+         <img src="../img/main/find.png" alt="icon">
+      </button>
+    </div>
+   </form>  
+        
+       <!--네비 영역-->
+      <div class="topmenu">
+        <a href="../html/dearyou-login.html">로그인</a>
+        <a href="../html/dearyou-signup.html">회원가입</a>
+        <a href="#" id="openDelivery">배송안내</a>
+          <div class="delivery-modal">
+          <div class="modal-content">
+            <h3>배송안내</h3>
+            <p>배송기간: 2~3일 소요</p>
+            <p>배송비: 3,000원 (3만원 이상 무료)</p>
+            <button id="closeDelivery">창닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+       <nav class="submenu">
+         <ul class="container">
+           <li><a href="../html/dearyou-sub01.html">메뉴안내</a></li>
+           <li><a href="../html/dearyou-sub02.html">브랜드스토리</a></li>
+         </ul> 
+       </nav>
+     </header>
+
+     <!--제품 이미지, 제품 구매 영역-->
+     <div class="detail-top">
+      <div class="goods">
+        <img src="../img/sub01/sub-menu01.jpg" alt="img">
+      </div>
+      <div class="goods-info">
+        <div class="goods-price">
+         <h4>기력회복 전복식단</h4>
+          <p>10,000원</p>
+       </div>
+
+        <div class="goods-del">
+         <p>배송정보</p>
+         <img src="../img/main/logo.png" alt="img">
+         <p>CJ대한통운</p>
+        </div>
+
+       <div class="goods-del2">
+         <p>배송비&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3,500원&nbsp;(30,000원 이상 주문시 배송무료)</p>
+       </div>
+
+        <div class="goods-buy">
+         <p>기력회복 전복식단</p>
+
+          <div class="product"> <!--JAVA 활용하여 제품 구매 갯수만큼 증가,감소-->
+            <div class="productnum">
+              <button onclick="decrease()">-</button>
+              <span id="count">1</span>
+            <button onclick="increase()">+</button>
+            </div>
+
+            <div class="productnum2">
+              <p style="font-family: 'DaeguDongseongRo'; font-size: 24px; color: #222;">총 금액: <span id="price">10,000</span>원</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="button">
+          <div class="like">
+           <input type="checkbox" id="like">
+           <label for="like" class="heart">❤</label>
+          </div>
+
+          <div class="gift">
+            <button>선물하기</button>
+          </div>
+
+          <div class="buy">
+            <button>바로구매</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--메뉴 구성 안내-->
+    <div class="detail-mid">
+      <div class="mid-left">
+        <img src="../img/detail/detailimg01.png" alt="img">
+        <div class="line1"></div>
+        <p>전복 스테이크</p>
+        <div class="line2"></div>
+        <span>귀리 현미밥</span>
+      </div>
+      <div class="mid-right">
+        <img src="../img/detail/detailimg02.png" alt="img">
+        <div class="line3"></div>
+        <p>브로콜리 마늘볶음</p>
+        <div class="line4"></div>
+        <span>단호박 견과류 범벅</span>
+      </div>
+    </div>
+
+    <!--제품 정보-->
+    <div class="detail-bottom">
+
+     <div class="product-meta">
+      <p>ㆍ제품명 : 기력 회복 전복 식단&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㆍ소비기한 : 별도 표기일까지</p>
+      <p>ㆍ품목보고번호 : 20300820331-0000&nbsp;&nbsp;&nbsp;&nbsp;ㆍ내용량(열량) : 350g (402kcal)</p>
+      <p>ㆍ식품유형 : 암환자용식단형식품</p>
+      <p class="full">
+        ㆍ원재료명 및 함량 :
+        현미(국산), 귀리, 전복, 올리브유, 허브, 단호박, 아몬드, 호두,
+        건과일, 브로콜리, 마늘
+      </p>
+    </div>
+
+  <!--영양 정보-->
+  <div class="nutrition">
+    <div class="nutrition-top">
+      <span>전복, 견과류 함유</span>
+    </div>
+
+    <div class="nutrition-title">
+      <span>영양정보</span>
+      <div class="cal">
+        <p>총 내용량 350g</p>
+        <b>402Kcal</b>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <td colspan="2">
+          <div class="cell"><span style="font-weight: 500;">나트륨</span><span style="font-weight: 300;">480mg</span><span style="font-weight: 500;">24%</span></div>
+        </td>
+        <td colspan="2">
+          <div class="cell"><span style="font-weight: 500;">탄수화물</span><span style="font-weight: 300;">55g</span><span style="font-weight: 500;">17%</span></div>
+        </td>
+        <td colspan="2">
+          <div class="cell"><span style="font-weight: 500;">당류</span><span style="font-weight: 300;">9g</span><span style="font-weight: 500;">9%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div class="cell"><span style="font-weight: 500;">지방</span><span style="font-weight: 300;">18g</span><span style="font-weight: 500;">33%</span></div>
+        </td>
+        <td colspan="2">
+          <div class="cell"><span style="font-weight: 500;">트랜스지방</span><span style="font-weight: 300;">0.0g</span><span style="font-weight: 500;">-</span></div>
+        </td>
+        <td colspan="2">
+          <div class="cell"><span style="font-weight: 500;">포화지방</span><span style="font-weight: 300;">3.5g</span><span style="font-weight: 500;">23%</span></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <div class="cell"><span style="font-weight: 500;">식이섬유</span><span style="font-weight: 300;">8g</span><span style="font-weight: 500;">32%</span></div>
+        </td>
+        <td colspan="3">
+          <div class="cell"><span style="font-weight: 500;">단백질</span><span style="font-weight: 300;">28g</span><span style="font-weight: 500;">51%</span></div>
+        </td>
+      </tr>
+    </table>
+
+    <p class="note">
+      <b>1일 영양성분 기준치에 대한 비율(%)</b>은 2,000kcal 기준입니다.
+    </p>
+  </div>
+
+  <!-- 하단 안내 -->
+  <div class="notice">
+    <p>
+      ㆍ보관방법 : 냉장보관(0~5˚C) ㆍ포장재질 : 비스페놀A 프리용기ㆍ주의사항 : 충격을 피하고 개봉 후 바로 드
+      세요. 의사의 지시에 따라 섭취하여야 하며, 의약품 및 건강기능식품이 아닙니다. 1회 섭취 시 1세트 섭취를 권
+      장합니다. ㆍ반품 및 교환장소 : 구입처 및 고객상담실 ㆍ고객상담실 : 010-3662-2435 ㆍ부정ㆍ불량ㆍ식품
+      신고는 국번없이 1399 ㆍ본 제품은 소비자 기본법에 의한 소비자 분쟁 해결 기준에 의거 교환 또는 보상 받으
+      실 수 있습니다. ㆍ업소명 및 소재지 : (주)디어유/대구광역시 달서구 장기로127 ㆍ본 제품은 난류, 우유, 메밀
+      땅콩. 고등어, 게, 복숭아, 토마토, 아황산류, 호두, 쇠고기, 조개류(전복, 홍합 포함), 잣을 사용하는 제품과 같은 제조시설에서 제조하고 있습니다.  
+    </p>
+  </div>
+</div>
+
+<!--리뷰 영역-->
+<div class="review">
+  <h2 class="review-title">REVIEW</h2>
+  <button class="photo-btn">PHOTO REVIEW</button>
+
+  <div class="review-list">
+    <img src="../img/detail/left.png" class="arrow left" alt="button">
+    <div class="review-card">
+      <div class="re-img">
+        <img src="../img/detail/review01.png" alt="img">
+      </div>
+
+      <div class="review-content">
+        <p class="title">간도 적당하고 정말 건강한 한끼 식사였어요!</p>
+        <div class="stars">★★★★★</div>
+        <span class="tag">한끼만 먹는사람</span>
+        <p class="desc">
+          항암치료 중이라 입맛이 많이 예민한데<br>
+          자극적이지 않고 부담 없이 잘 먹었습니다.<br>
+          간이 세지 않아서 먹고 나서 속도 편했고,<br>
+          반찬 구성이 균형 잡혀 있다는 느낌을 받았어요. <br>
+          끼니를 고민하지 않아도 된다는 점이 가장 좋았습니다.
+        </p>
+      </div>
+      <button class="more-btn">상품 보러가기</button>
+    </div>
+
+    <div class="review-card">
+      <div class="re-img">
+        <img src="../img/detail/review02.png" alt="img">
+      </div>
+
+      <div class="review-content">
+        <p class="title">재주문 의사 있습니다 ㅎㅎ</p>
+        <div class="stars">★★★★★</div>
+        <span class="tag">백구</span>
+        <p class="desc">
+          매일 식단을 챙기는 게 생각보다 큰 부담이었는데<br>
+          이 도시락 덕분에 한숨 덜었습니다. <br>
+          재료가 깔끔하고 메뉴 설명도 명확해서 <br>
+          안심하고 드릴 수 있었어요.‘잘 챙겨 먹고 있다’는 마음이 들었어요.
+        </p>
+      </div>
+      <button class="more-btn">상품 보러가기</button>
+    </div>
+
+    <div class="review-card">
+      <div class="re-img">
+        <img src="../img/detail/review03.png" alt="img">
+      </div>
+      
+      <div class="review-content">
+        <p class="title">도시락 먹으니까 신세계네요</p>
+        <div class="stars">★★★★★</div>
+        <span class="tag">퇴원하고싶다</span>
+        <p class="desc">
+          수술 후 회복 중이라 음식에 많이 신경 쓰고 있었는데 <br>
+          전체적으로 부담 없는 구성이라 좋았어요!!! <br>
+          양도 과하지 않고 한 끼로 딱 적당해서 <br>
+          남기지 않고 먹을 수 있었어요ㅎ <br>
+          무리 없이 일상 식사로 이어갈 수 있을 것 같아요~~^^
+        </p>
+      </div>
+      <button class="more-btn">상품 보러가기</button>
+    </div>
+    <img src="../img/detail/right.png" class="arrow right" alt="button">
+  </div>
+</div>
+
+<!--텍스트 리뷰-->
+<div class="text-review">
+  <div class="review-header">
+    <span class="review-label">TEXT REVIEW</span>
+    <ul class="review-list2">
+      <li class="review-item">
+        <div class="review-left">
+          <span class="stars2">★★★★★</span>
+          <span class="review-text">간이 순해서 부담 없이 잘 먹었습니다. 구성이 깔끔해서 한 끼로 충분했어요.</span>
+        </div>
+        <span class="review-user">ㅇㅇㅇㅇ</span>
+      </li>
+
+      <li class="review-item">
+        <div class="review-left">
+          <span class="stars2">★★★★★</span>
+          <span class="review-text">입맛 없을 때도 무리 없이 먹을 수 있었어요. 속이 편안해서 만족합니다.^^</span>
+        </div>
+        <span class="review-user">ㅎㅇ요</span>
+      </li>
+
+      <li class="review-item">
+        <div class="review-left">
+          <span class="stars2">★★★★★</span>
+          <span class="review-text">매번 식단 고민이었는데 많이 수월해졌어요. 재료가 깔끔하다는 느낌이 들어요ㅎㅎ</span>
+        </div>
+        <span class="review-user">밍지에요ㅎㅎ</span>
+      </li>
+
+      <li class="review-item">
+        <div class="review-left">
+          <span class="stars2">★★★★★</span>
+          <span class="review-text">정말 간단하고 건강하고 한끼 때우기 딱 좋네요 재주문 의사 있습니다 많이 파세여</span>
+        </div>
+        <span class="review-user">겨울남자</span>
+      </li>
+
+      <li class="review-item">
+        <div class="review-left">
+          <span class="stars2">★★★★★</span>
+          <span class="review-text">자극적이지 않아서 좋았고, 먹고 나서도 편했어요. 꾸준히 먹기 괜찮은 도시락입니다. </span>
+        </div>
+        <span class="review-user">discovery</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--푸터영역-->
+    <footer>
+       <div class="footer_left">
+        <a href="./index.html"><img src="../img/main/logo.png" alt="img"></a>
+        <ul>
+          <li>상호명: 디어유&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표자: 김나연</li>
+          <li>주소: 대구광역시 달서구 장기로127&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호 : 123-45-67890</li>
+          <li>대표 전화번호 : 010-3662-2435</li>
+        </ul>
+      </div>
+
+      <div class="footer_right">
+      <ul>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+      </ul>
+      </div>
+    </footer>
+</body>
+
+<script>
+  let count = 1; //현재 선택된 수량
+  let price = 10000; //상품 1개당 가격
+
+  function increase() { //수량 증가 함수 사용
+    count++; //수량을 1씩 증가
+    update(); //바뀐 숫자를 화면에 나타냄
+}
+
+  function decrease() { //수량 감소 함수 사용
+    if (count > 1) { //수량이 1보다 클때만 실행(최소 1개 유지)
+      count--; //수량을 1씩 감소
+      update(); //바뀐 숫자를 화면에 나타냄
+   }
+}
+
+  function update() {
+    document.getElementById("count").innerText = count; //"count"라는 ID값을 가진 글자를 현재 수량으로 변경
+    document.getElementById("price").innerText = count * price; //"price"라는 ID값을 가진 글자를 [수량*단가] 계산 결과로 바꿈
+}
+
+//배송안내(클릭시 팝업창)
+const openBtn = document.getElementById('openDelivery'); //ID가 'openDeliver'를 찾아서 변수(openBtn)에 담아둠
+const modal = document.querySelector('.delivery-modal'); //HTML에서 class명이 delivery-modal인 요소를 css방식으로 찾아서 변수에 저장
+const closeBtn = document.getElementById('closeDelivery'); //ID가 'closeDelivery'를 찾아서 변수(closeBtn)에 담아둠
+
+openBtn.addEventListener('click', () => { //열기버튼을 감시하고 있다가 누군가가 클릭하면
+  modal.style.display = 'block'; //숨겨둔 팝업창(modal)을 꺼내서 보여줌 **display ='block'인 이유 : 기본적인 성질이 block 속성이기 때문에
+});
+
+closeBtn.addEventListener('click', () => { //닫기버튼을 감시하고 있다가 누군가가 클릭하면
+  modal.style.display = 'none'; //팝업창(modal)을 숨김
+}); 
+</script>
+</html>

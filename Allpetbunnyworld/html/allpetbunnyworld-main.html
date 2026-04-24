@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AllPETBUNNYWORLD - main </title>
+  <link rel="stylesheet" href="../css/allpetbunnyworld-main.css">
+</head>
+<body>
+  <header>
+    <!--로고, 로그인, 회원가입, 공지사항-->
+    <a href="../html/allpetbunnyworld-main.html" class="logo">
+    <img src="../img/main/logo_png.png" alt="img">
+    </a>
+
+    <aside>
+      <form class="search-form">
+        <input type="search">
+        <img src="../img/main/find.png" alt="icon">
+      </form>
+      <a href="../html/allpetbunnyworld-login.html">로그인</a>
+      <a href="../html/allpetbunnyworld-signup.html">회원가입</a>
+      <a href="../html/allpetbunnyworld-sub04.html">공지사항</a>
+    </aside>
+  </header>
+
+  <section>
+    <!--서브 메뉴 좌측에 고정-->
+    <nav>
+      <h2>MAIN MENU</h2>
+      <a href="../html/allpetbunnyworld-sub01.html"><img src="../img/main/Dog.png" alt="img">강아지</a>
+      <a href="../html/allpetbunnyworld-sub02.html"><img src="../img/main/Cat.png" alt="img">고양이</a>
+      <a href="../html/allpetbunnyworld-sub03.html"><img src="../img/main/Carrot.png" alt="img">소동물</a>
+    </nav>
+
+    <article>
+      <!--메인 상단 비디오: 소리X, 무한 자동재생-->
+      <video src="../img/main/main01.mp4" width="1629" height="941.09" autoplay muted loop></video>
+
+      <!--베스트셀러-->
+      <div id="bestseller">
+        <h3>BEST SELLER</h3>
+
+        <div class="bestseller-box">
+          <div class="left-item cat">
+            <div class="best"><img src="../img/main/Crown.png" alt="img"></div>
+            <div class="img-wrap"><img src="../img/main/best01.png" alt="img">
+              <div class="price-overlay"><span>￦25,000원</span></div>
+            </div>
+            <div class="item-info"><a href="#">ANF 6free 플러스 캣 웨이트케어</a></div>
+         </div>
+        
+          <div class="right-item">
+            <div class="item dog">
+              <div class="img-wrap"><img src="../img/main/best02.png" alt="img">
+                <div class="price-overlay"><span>￦54,900원</span></div>  
+              </div>
+              <div class="item-info"><a href="../html/allpetbunnyworld-detail.html">나우 그레인프리 스몰브리드</a></div>
+            </div>
+            <div class="item cat">
+              <div class="img-wrap"><img src="../img/main/best04.png" alt="img">
+                <div class="price-overlay"><span>￦11,700원</span></div>
+              </div>
+              <div class="item-info"><a href="#">이나바 챠오 츄르 (6종세트)</a></div>
+            </div>
+            <div class="item all">
+              <div class="img-wrap"><img src="../img/main/best03.png" alt="img">
+                <div class="price-overlay"><span>￦9,000원</span></div>
+              </div>
+              <div class="item-info"><a href="#">위위 닭가슴살 오리지널</a></div>
+            </div>
+            <div class="item all">
+              <div class="img-wrap"><img src="../img/main/best05.png" alt="img">
+                <div class="price-overlay"><span>￦19,800원</span></div>
+              </div>
+              <div class="item-info"><a href="#">버박 C.E.T 치약 닭고기맛</a></div>
+            </div>
+          </div>
+        </div>
+        <button class="view-more">상품 더보기 &gt;</button>
+      </div>
+
+      <!--리뷰 영역-->
+      <div id="review">
+        <div class="review-control">
+          <img src="../img/main/left_btn.png" alt="img">
+          <span class="page-num">1 / 5</span>
+          <img src="../img/main/right_btn.png" alt="img">
+        </div>
+
+        <div class="review-list">
+          <div class="review-box">
+            <div class="photo"><a href="#"><img src="../img/main/review01.jpg" alt="img"></a></div>
+            <div class="info">
+              <h4><a href="#">이나바 챠오 츄르 56g (6종세트)</a></h4>
+              <p>거부감 없이 좋아해요 ㅎㅎ 울 애기 잘먹네용</p>
+              <div class="star">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="photo"><a href="#"><img src="../img/main/review02.jpg" alt="img"></a></div>
+            <div class="info">
+              <h4><a href="#">나우 그레인프리 스몰브리드</a></h4>
+              <p >늘 먹이는거에요 ~ ^^*</p>
+              <div class="star">★★★★<span style="color: #9F9C9C;">★</span></div>
+            </div>
+          </div>
+
+          <div class="review-box">
+            <div class="photo"><a href="#"><img src="../img/main/review03.jpg" alt="img"></a></div>
+            <div class="info">
+              <h4><a href="#">구루머스 치킨껌 10인치(1개입)</a></h4>
+              <p>배송 빠릅니다. 재 주문의사 있습니다.</p>
+              <div class="star">★★★★★</div>
+            </div>
+          </div>
+
+          <div class="review-box">
+           <div class="photo"><a href="#"><img src="../img/main/review04.jpg" alt="img"></a></div>
+            <div class="info">
+             <h4><a href="#">Go! 고 캣 카니보 그레인프리 <br>(치킨&칠면조&오리)</a></h4>
+             <p>사료다 =ㅇㅅㅇ= 옴뇸뇸 옴뇸뇸</p>
+             <div class="star">★★★★★</div>
+           </div>
+          </div>
+        </div>
+      </div>
+
+      <!--신상품 영역-->
+      <div id="new-arrival">
+        <h3 style="font-size: 42px; font-weight: bold;">NEW ARRIVAL</h3>
+
+        <div class="slide-btn">
+          <img src="../img/main/left_round.png" alt="button" class="btn-prev">
+          <img src="../img/main/right_round.png" alt="button" class="btn-next">
+       </div>
+
+        <div class="new-container">
+
+          <div class="new-box">
+            <div class="white-box">
+            <span class="badge-new">NEW</span>
+            <img src="../img/main/new01.jpg" alt="img">
+            <div class="new-overlay cat02">
+              <p class="price">￦16,900원</p>
+              <a href="#" class="btn-go">상품보러가기</a>
+            </div>
+          </div>
+
+          <div class="text-box">
+            <p>위생/배변</p>
+            <h4><a href="#">에이스펫 깜찍 870 블루</a></h4>
+          </div>
+        </div>
+
+          <div class="new-box">
+            <div class="white-box">
+             <span class="badge-new" style="background-color: #EDB7D3;">NEW</span>
+             <img src="../img/main/new02.jpg" alt="img">
+             <div class="new-overlay dog02">
+              <p class="price">￦19,900원</p>
+              <a href="#" class="btn-go">상품보러가기</a>
+            </div>
+            </div>
+
+          <div class="text-box">
+            <p>식품/사료</p>
+            <h4><a href="#">닥터오 프리미엄 위드 CBD<br>더리얼 소프트 강아지사료</a></h4>
+          </div>
+        </div>
+
+          <div class="new-box">
+            <div class="white-box">
+              <span class="badge-new">NEW</span>
+              <img src="../img/main/new03.jpg" alt="img">
+              <div class="new-overlay cat02">
+                <p class="price">￦1,250원</p>
+                <a href="#" class="btn-go">상품보러가기</a>
+              </div>
+            </div>
+
+            <div class="text-box">
+              <p>식품/간식</p>
+              <h4><a href="#">아이시아 먀우먀우 토바키리<br>고양이 캔 닭가슴살</a></h4>
+            </div>
+          </div>
+
+          <div class="new-box">
+            <div class="white-box">
+              <span class="badge-new">NEW</span>
+              <img src="../img/main/new04.jpg" alt="img">
+              <div class="new-overlay cat02">
+                <p class="price">￦5,800원</p>
+                <a href="#" class="btn-go">상품보러가기</a>
+              </div>
+            </div>
+
+            <div class="text-box">
+              <p>위생/배변</p>
+              <h4><a href="#">더스트몬 초슬림형 두부모래<br>참숯 2.5kg</a></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--이벤트 배너-->
+      <div id="event-banner">
+        <div class="left-event"><a href="#"><img src="../img/main/eventbanner.png" alt="img"></a></div>
+        <div class="right-event"><a href="#"><img src="../img/main/event02.jpg" alt="img"></a></div>
+      </div>
+
+      <!--건강 정보 잡지-->
+      <div id="health-magazine">
+        <h3>HEALTH INFORMATION MAGAZINE</h3>
+
+        <div class="magazine-box">
+          <div class="health01">
+            <a href="#"><img src="../img/main/main_under01.png" alt="img">
+              <button class="view">바로가기</button>
+            </a>
+            <p><a href="#">강아지 눈물 자국 원인</a></p>
+          </div>
+
+          <div class="health02">
+            <a href="#"><img src="../img/main/main_under02.jpg" alt="img">
+              <button class="view">바로가기</button>
+            </a>
+            <p><a href="#">강아지 발작증세 대처법 및 원인</a></p>
+          </div>
+
+          <div class="health03">
+            <a href="#"><img src="../img/main/main_under03.jpg" alt="img">
+              <button class="view">바로가기</button>
+            </a>
+            <p><a href="#">고양이가 먹으면 안되는 음식</a></p>
+          </div>
+        </div>
+        <button class="view-more">매거진 더보기 &gt;</button>
+      </div>
+
+      <!--브랜드 스토리-->
+      <div id="brand-story">
+        <div class="story-box">
+          <img src="../img/main/dogandcat.jpg" alt="img">
+        </div>
+        <div class="story-content">
+          <span>OUR PHILOSOPHY</span>
+          <h3>가족의 마음으로<br>직접 고르고 만듭니다.</h3>
+          <p>
+            우리는 단순히 물건을 판매하는 곳이 아닙니다.<br>
+            반려동물의 식성, 수면 습관, 그리고 놀이 방식까지 연구하여 가장 안전하고 행복한 결과물을 제안합니다.<br>
+            우리가 쓰는 모든 제품은 우리 집 아이들이 먼저 써본 것들뿐입니다.
+          </p>
+          <a href="#" class="btn-more">브랜드 스토리 더보기</a>
+        </div>
+      </div>
+
+      <!--메인 하단 사진 6개-->
+      <div class="photo-container">
+        <img class="img-box" src="../img/main/@main02.jpg" alt="img">
+        <img class="img-box" src="../img/main/@main06.jpg" alt="img">
+        <img class="img-box" src="../img/main/@main04.jpg" alt="img">
+        <img class="img-box" src="../img/main/@main03.jpg" alt="img">
+        <img class="img-box" src="../img/main/@main05.jpg" alt="img">
+        <img class="img-box" src="../img/main/@main01.jpg" alt="img">
+        <div class="tag"><p>@AllPETBUNNYWORLD</p></div>
+      </div>
+
+      <!--공지사항-->
+      <div id="notice">
+        <div class="notice-head">
+          <h3>공지사항</h3>
+          <div class="controls">
+            <img src="../img/main/notice_left.png" alt="button">
+            <img src="../img/main/notice_right.png" alt="button">
+          </div>
+        </div>
+
+        <div class="notice-slider">
+          <ul>
+            <li><a href="#">주문 전 필독사항</a></li>
+            <li><a href="#">회원 등급제 공지 필독</a></li>
+            <li><a href="#">매주 월요일 공지사항 안내</a></li>
+            <li><a href="#">회원 등급별 할인 혜택 안내</a></li>
+            <li><a href="#">아이폰iOS 11.3 버전 업데이트로 인한 휴대폰 안심클릭 결제 오류 안내</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="notice-more">더보기 <img src="../img/main/notice_more.png" alt="button"></a>
+
+      </div>
+    </article>
+  </section>
+
+  <!--TOP 버튼-->
+  <aside>
+    <div id="top_btn">
+      <a href="#top"><img src="../img/sub01/top_btn.png" alt="button"></a>
+    </div>
+  </aside>
+
+  <!--푸터영역-->
+  <footer>
+    <div class="footer-inner">
+      <img src="../img/main/logo_png.png" alt="logo" class="footer-logo">
+      <div class="footer-area">
+      <p>
+        상호명 : 주식회사제이엠트레이딩  |  대표 : 박창노<br>
+        주소 : 경기도 김포시 대곶면 삭시갈마로 98-72<br>
+        사업자 등록번호 : 893-86-00430 [사업자정보 확인]<br>
+        통신판매업 신고 번호 : 2022-경기김포-2693<br>
+        개인정보보호책임자 : 정용록<br>
+        메일 : jmpet@daum.net
+      </p>
+      
+      <div class="service">
+        고객센터 : 031-984-4474<span>(평일 오전 10시~오후 5시 ※토, 일, 공휴일 휴무)</span>
+      </div>
+    </div>
+
+    <ul class="footer-menu">
+      <li><a href="#">개인정보처리방침</a></li>
+      <li>ㅣ</li>
+      <li><a href="#">이용약관</a></li>
+      <li>ㅣ</li>
+      <li><a href="#">이용안내</a></li>
+      <li>ㅣ</li>
+      <li><a href="#">회사소개</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

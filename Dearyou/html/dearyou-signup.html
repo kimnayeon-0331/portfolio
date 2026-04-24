@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dear You - signup</title>
+  <link rel="stylesheet" href="../css/dearyou-signup.css">
+</head>
+<body>
+ <!--헤더 영역-->
+ <header class="header">
+  <div class="container header_inner">
+    <a href="./Dearyou-main.html"><img src="../img/main/logo.png" alt="img"></a>
+    
+    <!--검색창-->
+    <form class="search-form">
+    <div class="search-box">
+       <input type="search" name="q">
+        <button type="submit">
+         <img src="../img/main/find.png" alt="icon">
+      </button>
+    </div>
+   </form>  
+        
+  <!--네비 영역-->
+  <div class="topmenu">
+    <a href="../html/dearyou-login.html">로그인</a>
+    <a href="../html/dearyou-signup.html">회원가입</a>
+    <a href="#" id="openDelivery">배송안내</a>
+      <div class="delivery-modal">
+      <div class="modal-content">
+        <h3>배송안내</h3>
+        <p>배송기간: 2~3일 소요</p>
+        <p>배송비: 3,000원 (3만원 이상 무료)</p>
+        <button id="closeDelivery">창닫기</button>
+      </div>
+    </div>
+   </div>
+  </div>
+    <nav class="submenu">
+     <ul class="container">
+       <li><a href="../html/dearyou-sub01.html">메뉴안내</a></li>
+       <li><a href="../html/dearyou-sub02.html">브랜드스토리</a></li>
+      </ul> 
+    </nav>
+  </header>
+
+  <!--회원가입-->
+  <div class="join">
+    <h2>회원가입</h2>
+
+    <!--이용약관-->
+    <div class="agreearea">
+      <div class="agree">
+        <div class="agree-title">[필수] 이용약관</div>
+        <div class="agree-content">
+          이용약관<br>
+          <br>
+          제1조 (목적)<br>
+          본 약관은 디어유 (이하 “회사”)가 제공하는 온라인 서비스(이하 “서비스”)의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.<br>
+          <br>
+          제2조 (정의)<br>
+          2. “이용자”란 본 약관에 따라 회사가 제공하는 서비스를 이용하는 회원 및 비회원을 말합니다.<br>
+          3. “회원”이란 회사에 개인정보를 제공하고 회원가입을 완료한 자를 말합니다.<br>
+          4. “비회원”이란 회원가입 없이 서비스를 이용하는 자를 말합니다.<br>
+          <br>
+          제3조 (약관의 효력 및 변경)<br>
+          1. 본 약관은 서비스 화면에 게시하거나 기타의 방법으로 이용자에게 공지함으로써 효력을 발생합니다.<br>
+          2. 회사는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있습니다.<br>
+          3. 약관이 변경될 경우, 회사는 변경 내용과 적용일자를 명시하여 사전에 공지합니다.<br>
+          <br>
+          제4조 (서비스의 제공 및 변경)<br>
+          회사는 다음과 같은 서비스를 제공합니다.<br>
+            도시락 및 식사 관련 정보 제공<br>
+            상품 주문 및 결제 서비스<br>
+            커뮤니티 및 콘텐츠 제공<br>
+            기타 회사가 정하는 서비스<br>
+          회사는 서비스의 내용, 운영상 또는 기술상의 필요에 따라 서비스를 변경할 수 있습니다.<br>
+          <br>
+          제5조 (회원가입)<br>
+          1. 회원가입은 이용자가 약관에 동의하고 회사가 정한 가입 양식을 작성하여 신청함으로써 이루어집니다.<br>
+          2. 회사는 다음 각 호에 해당하는 경우 회원가입을 거부하거나 사후에 취소할 수 있습니다.<br>
+              허위 정보를 기재한 경우<br>
+              타인의 정보를 도용한 경우<br>
+              기타 회사의 운영 정책에 부합하지 않는 경우<br>
+          <br>
+          제6조 (회원의 의무)<br>
+          회원은 다음 행위를 하여서는 안 됩니다.<br>
+          1. 타인의 정보 도용<br>
+          2. 서비스 운영을 방해하는 행위<br>
+          3. 법령 또는 공공질서에 위반되는 행위<br>
+          4. 회사의 사전 동의 없이 영리 목적의 이용 행위<br>
+          <br>
+          제7조 (회사의 의무)<br>
+          1. 회사는 안정적인 서비스 제공을 위해 최선을 다합니다.<br>
+          2. 회사는 이용자의 개인정보를 관련 법령에 따라 보호합니다.<br>
+          3. 회사는 이용자의 의견이나 불만이 정당하다고 인정되는 경우 이를 신속히 처리합니다.<br>
+          <br>
+          제8조 (개인정보 보호)<br>
+          회사는 이용자의 개인정보를 보호하며, 개인정보의 수집·이용·보관·처리에 관한 사항은 별도의 「개인정보처리방침」에 따릅니다.<br>
+          <br>
+          제9조 (책임의 제한)<br>
+          1. 회사는 천재지변, 시스템 장애 등 불가항력적인 사유로 서비스를 제공할 수 없는 경우 책임을 지지 않습니다.<br>
+          2. 회사는 이용자의 귀책사유로 발생한 손해에 대해 책임을 지지 않습니다.<br>
+          3. 회사가 제공하는 정보는 참고용이며, 개인의 건강 상태에 따른 전문적인 의료 판단을 대체하지 않습니다.<br>
+          <br>
+          제10조 (분쟁 해결)<br>
+          1. 회사와 이용자 간 발생한 분쟁은 상호 협의하여 해결하도록 노력합니다.<br>
+          2. 협의가 이루어지지 않을 경우, 관할 법원은 회사의 본점 소재지를 따릅니다.<br>
+          <br>
+          부칙<br>
+          본 약관은 **[2026년 1월 10일]**부터 시행합니다.<br>
+        </div>
+        <div class="agree">
+          <div class="agree-title">[필수] 개인정보 수집 및 이용동의</div>
+          <div class="agree-content">
+            개인정보 수집 및 이용 동의<br>
+            <br>
+            디어유(이하 “회사”)는 「개인정보 보호법」 등 관련 법령에 따라, 서비스 제공을 위해 아래와 같이 개인정보를 수집·이용합니다.<br>
+            1. 개인정보 수집 항목 및 방법<br>
+                ① 수집 항목<br>
+                <br>
+                    ☞ 필수 항목<br>
+                    이름<br>
+                    이메일 주소<br>
+                    비밀번호<br>
+                <br>
+                    ☞ 선택 항목<br>
+                    휴대전화번호<br>
+                    서비스 이용 관련 선택 정보(환자/보호자 여부 등)<br>
+                    ※ 선택 항목은 입력하지 않아도 서비스 이용에 제한이 없습니다.<br>
+                <br>
+                ② 수집 방법<br>
+                  <br>                
+                  1. 회원가입 시 이용자가 직접 입력<br>
+                  서비스 이용 과정에서 자동 수집되는 정보 (접속 기록 등)<br>
+                  2. 개인정보 수집 및 이용 목적<br>
+                  회사는 수집한 개인정보를 다음 목적을 위해 이용합니다.<br>
+                  회원 가입 및 본인 확인<br>
+                  서비스 제공 및 운영 관리<br>
+                  주문, 결제, 배송 관련 안내<br>
+                  고객 문의 및 민원 처리<br>
+                  서비스 개선 및 이용 분석<br>
+                  3. 개인정보 보유 및 이용 기간<br>
+                  회원 탈퇴 시까지 보유 및 이용<br>
+                  단, 관계 법령에 따라 보존이 필요한 경우 해당 기간 동안 보관 후 파기<br>
+                  4. 개인정보 제공 및 위탁<br>
+                  회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 서비스 제공을 위해 필요한 경우 관련 법령에 따라 개인정보 처리 업무를 위탁할 수 있습니다.<br>
+                  5. 동의 거부 권리 및 불이익 안내<br>
+                  이용자는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있습니다. 다만, 필수 항목에 대한 동의를 거부할 경우 회원가입 및 서비스 이용이 제한될 수 있습니다.<br>
+                  6. 개인정보 보호를 위한 노력<br>
+                  회사는 이용자의 개인정보를 안전하게 보호하기 위해 관리적·기술적 보호조치를 취하고 있습니다.<br>
+                  7. 문의처<br>
+                  개인정보 관련 문의는 아래로 연락해 주세요.<br>
+                  이메일: [yyvv24@naver.com]<br>
+                  고객센터: [010-3662-2435]<br>
+          </div>
+        </div>
+        <div class="agree-check">
+          <label>
+            <input type="radio" name="agreement" id="agree">동의합니다.
+          </label>  
+          <label>
+            <input type="radio" name="agreement" id="disagree">동의하지 않습니다.
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--회원가입-->
+  <div class="join-form">
+    <div class="join-top">
+     <p class="title">기본정보</p>
+     <p class="required"><span>*</span> 필수입력사항</p>
+    </div>
+
+    <div class="form" data-type="ID">
+     <label>아이디<span>*</span></label>
+     <input type="text" id="userId"  maxlength="16" placeholder="아이디를 입력 해주세요.">
+     <p class="desc">(영문소문자/숫자, 4~16자)</p>
+    </div>
+
+    <div class="form" data-type="PASSWORD">
+     <label>비밀번호 입력<span>*</span></label>
+     <input type="password" maxlength="16" placeholder="비밀번호를 입력 해주세요.">
+     <p id="msg" class="desc">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)</p>
+    </div>
+
+   <div class="form" data-type="PASSWORD">
+     <label>비밀번호 확인<span>*</span></label>
+     <input type="password"  id="password" placeholder="비밀번호를 한번 더 입력 해주세요.">
+   </div>
+
+    <div class="form" data-type="NAME">
+     <label>이름<span>*</span></label>
+     <input type="text">
+   </div>
+
+   <div class="form" data-type="ADDRESS">
+     <label class="address-title">주소<span>*</span></label>
+     <div class="address-box">
+     <!--우편번호-->
+      <div class="zip">
+        <input type="search" id="postcode" placeholder="우편번호 입력" readonly>
+
+        <!--버튼-->
+        <div class="button" onclick="execDaumPostcode()">
+        <img src="../img/signin/right_btn.png" alt="img">
+        </div>
+      </div>
+        <input type="text" id="address" readonly placeholder="기본 주소">
+        <input type="text" id="detail" placeholder="상세 주소">
+      </div>
+     </div>
+
+   <div class="form" data-type="nomalcall">
+      <label>일반전화</label>
+     <div class="phone">
+      <select>
+        <option>(02)</option>
+        <option>(041)</option>
+        <option>(042)</option>
+        <option>(053)</option>
+        <option>(054)</option>
+        </select>-
+        <input type="text" maxlength="4">-
+        <input type="text" maxlength="4">
+      </div>
+    </div>
+
+    <div class="form" data-type="cellphone">
+      <label>휴대전화<span>*</span></label>
+      <div class="phone">
+        <select>
+          <option>(010)</option>
+          <option>(016)</option>
+          <option>(017)</option>
+          <option>(018)</option>
+          <option>(019)</option>
+        </select>-
+        <input type="text" maxlength="4">-
+        <input type="text" maxlength="4">
+    </div>
+  </div>
+</div>
+
+<div class="form-2" data-type="extra">
+  <div class="form-title">추가정보</div>
+
+  <div class="form">
+    <label>성별</label>
+    <div class="gender">
+     <input type="radio" id="man" name="gender">
+     <label for="man">남자</label>
+     <input type="radio" id="woman" name="gender">
+     <label for="woman">여자</label>
+    </div>
+  </div>
+
+  <div class="form">
+    <label>생년월일</label>
+    <div class="birth">
+      <input type="number" placeholder="yyyy" min="1900" max="2099">
+      <p>년</p>
+      <input type="number" placeholder="mm" min="1" max="12">
+      <p>월</p>
+      <input type="number" placeholder="dd" min="1" max="31">
+      <p>일</p>
+    </div>
+  </div>
+</div>
+
+<button type="submit" class="submit-btn">회원가입</button>
+
+    <!--푸터 영역-->
+    <footer>
+       <div class="footer_left">
+        <a href="./index.html"><img src="../img/main/logo.png" alt="img"></a>
+        <ul>
+          <li>상호명: 디어유&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표자: 김나연</li>
+          <li>주소: 대구광역시 달서구 장기로127&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ㅣ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;사업자등록번호 : 123-45-67890</li>
+          <li>대표 전화번호 : 010-3662-2435</li>
+        </ul>
+      </div>
+
+      <div class="footer_right">
+      <ul>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+      </ul>
+      </div>
+    </footer>
+
+<!--카카오 주소 API (확장:'Live surver'로 실행-GO live)
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>-->!
+
+<!--<script>
+  우편번호 검색
+  function execDaumPostcode() {
+  new daum.Postcode({
+    oncomplete: function(data) {
+      document.getElementById('postcode').value = data.zonecode;
+      document.getElementById('address').value = data.roadAddress;
+      document.getElementById('detail').focus();
+    }
+  }).open();
+}
+</script>-->!
+</body>
+
+<script>
+//배송안내(클릭시 팝업창)
+const openBtn = document.getElementById('openDelivery'); //ID가 'openDeliver'를 찾아서 변수(openBtn)에 담아둠
+const modal = document.querySelector('.delivery-modal'); //HTML에서 class명이 delivery-modal인 요소를 css방식으로 찾아서 변수에 저장
+const closeBtn = document.getElementById('closeDelivery'); //ID가 'closeDelivery'를 찾아서 변수(closeBtn)에 담아둠
+
+openBtn.addEventListener('click', () => { //열기버튼을 감시하고 있다가 누군가가 클릭하면
+  modal.style.display = 'block'; //숨겨둔 팝업창(modal)을 꺼내서 보여줌 **display ='block'인 이유 : 기본적인 성질이 block 속성이기 때문에
+});
+
+closeBtn.addEventListener('click', () => { //닫기버튼을 감시하고 있다가 누군가가 클릭하면
+  modal.style.display = 'none'; //팝업창(modal)을 숨김
+}); 
+
+</script>
+</html>

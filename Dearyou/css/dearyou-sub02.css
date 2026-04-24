@@ -1,0 +1,463 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Cafe24Gowoonbam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DaeguDongseongRo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2511-1@1.0/DaeguDongseongro-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/*@font-face {
+    font-family: 'NostalgicYuriDakku';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-1@1.0/Griun_YuriDaggu-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}*/
+
+/*전체 영역*/
+* {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 2%;
+  /*outline: 1px solid red;*/
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  width: 100%;
+  /*height: 6480px;*/
+  background-color: #fff9f0;
+  /*overflow-x: hidden;*/
+}
+
+/*컨테이너 설정*/
+.container {
+  display: flex;
+  /*width: 100%;*/
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*헤더 영역*/
+.header {
+  width: 100%;
+  max-width: 1920px;
+  height: 166px;
+  /*background-color: lightskyblue;*/
+  position: relative;
+}
+
+.header_inner {
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.header_inner img {
+  width: 150px;
+  height: 150px;
+  /*padding-left: 270px;*/
+  /*margin-top: -70px;*/
+}
+
+.header_inner a {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.header_inner a img {
+  transform: translateY(-42px);
+}
+
+/*검색창*/
+.search-form {
+  margin: -80px 290px 0 -25px; /*위, 오른쪽, 아래, 왼쪽*/
+}
+
+.search-box {
+  position: relative;
+  width: 350px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+  padding: 10px 42px 10px 20px; /*위, 오른쪽, 아래, 왼쪽*/
+  border: 1px solid rgba(88, 88, 88, 0.3);
+  background-color: rgba(249, 249, 249, 0.3);
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #000;
+}
+
+.search-box input:focus {
+  border: 1px solid rgba(88, 88, 88, 0.5);
+  outline: none;
+}
+
+.search-box button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-box button img {
+  width: 13.77px;   
+  height: 13.77px;
+  display: block;
+  padding-right: 10px;
+}
+
+.search-box input { /*검색창 폰트 설정*/
+  font-size: 14px;  
+  color: #000;  
+}
+
+.topmenu {
+  display: flex;
+  margin: 10px 220px 120px auto; /*위, 오른쪽, 아래, 왼쪽*/
+  gap: 25px; /*버튼 간 간격 조절*/
+}
+
+.topmenu a {
+  /*margin-left: 35px;*/
+  font-size: 16px;
+  color: #222;
+  padding: 5px 10px; /*버튼 크기 조절*/
+  background-color: #FFAB91;
+  border-radius: 10px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.topmenu a:hover {
+  background-color: #ffbda9;
+}
+
+.submenu {
+  position: relative;
+  top: -100px;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 18px;
+}
+
+.submenu ul {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  color: #222;
+}
+
+.submenu ul li a:hover {
+  background-color: #fae6c7;
+  padding: 5px 10px 5px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/*배송 안내*/
+.delivery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+}
+
+.modal-content {
+  background: #fff9f0;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  margin: 200px auto;
+  text-align: center;
+  font-family: 'Cafe24Gowoonbam';
+  border-radius: 10px;
+}
+
+.modal-content H3 {
+  margin-bottom: 50px;
+}
+
+.modal-content p {
+  text-align: left;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  font-family: 'Cafe24Gowoonbam';
+  background-color: #fff9f0;
+  width: 50px;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 120px;
+}
+
+/*서브 상단 영역*/
+.sub-menu{
+
+}
+
+.sub-top-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.sub-top-title h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: 'DaeguDongseongRo';
+}
+
+.sub-top-title p {
+  font-size: 18px;
+  font-family: 'Cafe24Gowoonbam';
+}
+
+/*메인 배너 이미지*/
+.sub-img {
+  background-image: url(../img/sub02/letter.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 993px;
+  opacity: 0.7;
+  margin-top: 60px;
+  background-attachment: fixed;
+}
+
+/*브랜드 스토리*/
+.brandstory h2 {
+  width: 100%;
+  height: 119px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-family: 'Cafe24Gowoonbam';
+  color: #222;
+  margin-top: 40px;
+}
+
+.story01 img, .story02 img, .story03 img {
+  width: 650px;
+  height: 430px;
+}
+
+.story01, .story02, .story03 {
+  margin-bottom: 50px;
+}
+
+.story01 {
+  width: 100%;
+  height: 491px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Cafe24Gowoonbam';
+  line-height: 180%;
+}
+
+.story01 img {
+  float: left;
+  margin-right: 80px;
+}
+
+.story02 {
+  width: 100%;
+  height: 502px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Cafe24Gowoonbam';
+  line-height: 180%;
+}
+
+.story02 img {
+  float: right;
+  margin-left: 80px;
+}
+
+.story03 {
+  width: 100%;
+  height: 524px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Cafe24Gowoonbam';
+  line-height: 180%;
+}
+
+.story03 img {
+  float: left;
+  margin-right: 80px;
+}
+
+/*가게 외부, 내부*/
+.out-store img {
+  width: 100%;
+  height: 689px;
+  margin-top: 40px;
+}
+
+.store-circle {
+  width: 100%;
+  height: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 110px;
+  margin: 20px 0px 40px 0;
+}
+
+.store-circle img {
+  width: 250px;
+  height: 250px;
+  border-radius: 999px;
+  opacity: 0.8;
+}
+
+/*3대 원칙*/
+.rule {
+  width: 100%;
+  height: 272px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 47px;
+}
+
+.rule-1, .rule-2, .rule-3 {
+  width: 550px;
+  height: 270px;
+  /*background-color: lightblue;*/
+  text-align: center;
+  background-color: #F6ECDE;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0px 6px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: 'Cafe24Gowoonbam';
+  margin-bottom: 40px;
+}
+
+.rule-1 img, .rule-2 img, .rule-3 img {
+  width: 150px;
+  height: 150px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.rule-1 h4, .rule-2 h4, .rule-3 h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.rule-1 span, .rule-2 span, .rule-3 span {
+  font-size: 14px;
+}
+
+/*서브 하단 영역*/
+
+.foods {
+  position: relative;
+  z-index: 1;
+  height: 977px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /*세로 정렬*/
+  gap: 110px;
+  font-family: 'Cafe24Gowoonbam';
+  margin-bottom: 40px;
+}
+
+.foods::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/sub02/foods.jpg") no-repeat center / cover;
+  opacity: 0.3; 
+  z-index: -1;
+}
+
+.foods h3 {
+  font-size: 50px;
+  color: #5D5D5D;
+}
+
+.foods p {
+  font-size: 30px;
+  line-height: 180%;
+  color: #585757;
+  /*background-color: #fff;*/
+}
+
+/*푸터영역*/
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 102px;
+  padding-top: 23px;
+  padding-bottom: 108px;
+  background-color: #FCE5C2;
+  color: #333;
+}
+
+.footer_left {
+  display: flex;
+  flex-direction: column;
+  line-height: 180%;
+}
+
+.footer_left a img {
+  width: 150px;
+  height: 150px;
+}
+
+.footer_right {
+  align-self: flex-start;
+  margin-right: 180px;
+}
+
+.footer_right ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+}
+
+.footer_right ul li {
+  background-color: #FFAB91;
+  padding: 5px 20px 5px;
+  border-radius: 5px;
+}

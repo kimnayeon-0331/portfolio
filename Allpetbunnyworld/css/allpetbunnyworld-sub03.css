@@ -1,0 +1,911 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 2%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: #FAF9F6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;/*전체 페이지가 최소 화면 한칸을 차지*/
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /*header는 왼쪽 끝, aside는 오른쪽 끝으로*/
+  align-items: flex-start;     
+  /*width: 1745px;*/
+  /*background-color: lightblue;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 80px;
+  z-index: 1000; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #FAF9F6;
+}
+
+.logo {
+  /*background-color: lightgoldenrodyellow;*/
+  padding-left: 15px;
+}
+
+.logo img {
+  display: block;
+  height: 61px; 
+  width: 270px;
+  object-fit: cover;
+}
+
+/* Aside: 검색창과 버튼 정렬 */
+aside {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  /*background-color: lightseagreen;*/
+}
+
+aside a {
+  color: #000;
+  font-size: 14px;
+}
+
+.search-form {
+  display: flex;
+  border-radius: 7px;
+  width: 271px;
+  height: 45px;
+  border: 4px solid #A0C8F5;
+  margin-top: 10px;
+}
+
+.search-form img {
+  width: 15.49px;
+  height: 15.49px;
+  margin-top: 10px;
+  margin-right: 11px;
+  cursor: pointer;
+}
+
+/*검색하는 공간*/
+.search-form input {
+  background: none;
+  outline: none;
+  border: none;
+  width: 253px;
+  margin-left: 10px;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  margin-top: 171.5px;
+  height: 80px;
+  display: flex;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  margin-left: 50px;
+  /*background-color: lightcoral;*/
+  position: sticky; /*스크롤 하다가 지정한 위치에 고정*/
+  top: 80px; /*헤더 높이만큼 띄워서 고정 (헤더와 안 겹치게)*/
+  width: 170px;
+  height: calc(100vh - 80px); /*화면 높이에서 헤더 높이 뺀 만큼*/
+  background-color: #f9f9f9;
+  flex-shrink: 0; /*크기가 줄어들지 않도록 고정*/
+}
+
+nav h2 {
+  font-size: 26px;
+  color: #333;
+}
+
+nav a {
+  color: #333;
+  font-weight: 500;
+  font-size: 22px;
+  display: flex;
+  align-items: center; /*세로 중앙 정렬*/
+  margin-left: 18px;
+  transition: all 0.2s ease-in-out; /*호버시 부드러운 효과*/
+}
+
+nav a img {
+  margin-right: 9px;
+  width: 40px; 
+  height: auto;
+  flex-shrink: 0; /*이미지 찌그러지지않도록 고정*/
+  object-fit: contain; /*아이콘 가운데 정렬*/
+}
+
+.menu:nth-of-type(1):hover {
+  color: #ffa0c4;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.menu:nth-of-type(2):hover {
+  color: #6ab5f3;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.menu:nth-of-type(3):hover {
+  color: #71e271;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+nav > h3 {
+  font-size: 26px;
+  color: #333;
+  margin-top: 120px;
+}
+
+.list a{
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.list a:hover {
+  color: #36cf69;
+  font-weight: bold;
+  transform: translateX(20px); /*오른쪽으로 이동*/
+}
+
+/*메인 우측 영역*/
+section {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+/*소동물 상품 판매 안내*/
+article{
+  margin-left: 125px;
+  width: 100%;
+}
+
+.top-title img {
+  width: 223px;
+  height: 62px;
+  object-fit: cover; /*박스를 꽉 채우되, 비율을 유지하면서 넘치는 부분은 잘라냄*/
+  object-position: 0 71%;
+}
+
+.top-title h4 {
+  font-size: 37px;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 4%;
+  margin-left: 50px;
+}
+
+.top-title p {
+  font-size: 17px;
+  letter-spacing: 4%;
+  text-align: left;
+  margin: 10px 0 98px 60px;
+}
+
+/*토끼 상품 판매 영역*/
+.title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;;
+  /*background-color: lightblue;*/
+  margin-right: 30px;
+}
+
+.all-view {
+  color: #222;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.all-view:hover {
+  color: #444;
+}
+
+.rabbit-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*한 줄에 똑같은 비율(1fr)로 2개 배치 */
+  gap: 81px; 
+  text-align: center;
+}
+
+.rabbit-list .product-card {
+  /*flex: 1;*/
+  background-color: #DAF2DB;
+  border-radius: 10px;
+  padding: 20px 15px 20px 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 720 / 535; /*가로, 세로 비율 자동 계산*/
+  max-width: 720px; 
+}
+
+.rabbit-area {
+  font-size: 28px;
+  color: #222;
+  width: 152px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  background-color: #fff;
+  border: 2px solid #FF94BD;
+  border-radius: 50px;
+  margin-bottom: 105px;
+}
+
+.rabbit-title img {
+  width: 50px;
+  height: 50px;
+}
+
+.img-box {
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex: 1; /*남은 공간을 이미지 박스가 다 채우도록 설정*/
+  min-height: 0; /*flex 박스 안에서 높이 오류 방지 */
+}
+
+.img-box img {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/*이미지 호버시 제품 가격 안내*/
+.price-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #9ee7ab;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: translateY(100%); /*박스 아래로 완전히 숨김*/
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+/*호버했을 때 나타나기*/
+.img-box:hover .price-btn {
+  transform: translateY(0); 
+}
+
+.price-btn span {
+  color: #222; 
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/*이미지 호버시 살짝 커짐*/
+.img-box:hover img {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+
+/*가격 보기 단추*/
+.price-btn::before {
+  content: '가격 보기';
+  position: absolute;
+  top: -24px;
+  background-color: #333;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 15px;
+  border-radius: 4px;
+}
+
+/*토끼 상품 가격표 스타일*/
+.rabbit-table table {
+  width: 85%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.rabbit-table td {
+  padding: 12px 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px dashed rgba(11, 146, 40, 0.479);
+}
+
+.rabbit-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rabbit-table td:last-child {
+  text-align: right;
+}
+
+.product-name {
+  margin-top: auto; /*내용이 적어도 제목 위치가 어느정도 맞도록 조절*/
+  font-size: 16px;
+  line-height: 1.4;
+  word-break: keep-all; /*단어 단위로 줄바꿈*/
+}
+
+/*제품명 호버시 폰트 굵게, 밑줄선*/
+.product-card a:hover .product-name {
+  font-weight: 500 !important;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/*토끼 배너 영역*/
+.rabbit-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; 
+  width: 100%;
+  max-width: 1522px;
+  max-height: 441px;
+  margin: 91px 10px;
+  padding: 38px 200px;
+  background-color: rgba(233, 224, 224, 0.5);
+}
+
+.rb-text {
+  flex: 1;
+  text-align: left;
+}
+
+.rb-title {
+  font-size: 50px;     
+  font-weight: 800;
+  color: #000; 
+  line-height: 1.1;
+  margin-bottom: 52px;
+}
+
+.rb-text02 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #434343; 
+  line-height: 1.6;
+}
+
+.rb-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /*이미지를 오른쪽 끝으로 붙임*/
+}
+
+.rb-img img {
+  width: 100%;
+  max-width: 558px;
+  height: 365px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/*고슴도치 상품 판매 영역*/
+.hedgehog-area {
+  font-size: 28px;
+  color: #222;
+  width: 206px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  background-color: #fff;
+  border: 2px solid #745939;
+  border-radius: 50px;
+  margin-bottom: 105px;
+}
+
+.hedgehog-title img {
+  width: 50px;
+  height: 50px;
+}
+
+.img-box {
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex: 1; /*남은 공간을 이미지 박스가 다 채우도록 설정*/
+  min-height: 0; /*flex 박스 안에서 높이 오류 방지 */
+}
+
+.hedgehog-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*한 줄에 똑같은 비율(1fr)로 2개 배치 */
+  gap: 81px; 
+  text-align: center;
+}
+
+.hedgehog-list .product-card {
+  /*flex: 1;*/
+  background-color: #DAF2DB;
+  border-radius: 10px;
+  padding: 20px 15px 20px 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 720 / 535; /*가로, 세로 비율 자동 계산*/
+  max-width: 720px; 
+}
+
+/*고슴도치 제품 가격표 스타일*/
+.hedgehog-table table {
+  width: 85%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.hedgehog-table td {
+  padding: 12px 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px dashed rgba(19, 82, 175, 0.479);
+}
+
+.hedgehog-table tr:last-child td {
+  border-bottom: none;
+}
+
+.hedgehog-table td:last-child {
+  text-align: right;
+}
+
+/*고슴도치 cart tip*/
+.hedge_care {
+  display: flex;
+  align-items: center;     
+  background-color: #EDF5FB;
+  border-radius: 10px;
+  width: 1522px;
+  box-sizing: border-box;
+  gap: 9px;
+  margin-top: 91px;
+  margin-bottom: 91px;
+  padding: 15px 20px;
+}
+
+.tip-icon img {
+  width: 50px; 
+  height: 50px;
+  border-radius: 50px;
+}
+
+.tip-title {
+  font-size: 35px;
+  font-weight: 800;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.tip-text {
+  font-size: 22px;
+  color: #4E4E4E;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/*새 상품 판매영역*/
+.bird-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*한 줄에 똑같은 비율(1fr)로 2개 배치 */
+  gap: 81px; 
+  text-align: center;
+}
+
+.bird-list .product-card {
+  /*flex: 1;*/
+  background-color: #DAF2DB;
+  border-radius: 10px;
+  padding: 20px 15px 20px 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 720 / 535; /*가로, 세로 비율 자동 계산*/
+  max-width: 720px; 
+}
+
+.bird-area {
+  font-size: 28px;
+  color: #222;
+  width: 152px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  background-color: #fff;
+  border: 2px solid #529DF8;
+  border-radius: 50px;
+  margin-bottom: 105px;
+}
+
+.bird-title img {
+  width: 50px;
+  height: 50px;
+}
+
+/*새 제품 가격표 스타일*/
+.bird-table table {
+  width: 85%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.bird-table td {
+  padding: 12px 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px dashed rgba(19, 82, 175, 0.479);
+}
+
+.bird-table tr:last-child td {
+  border-bottom: none;
+}
+
+.bird-table td:last-child {
+  text-align: right;
+}
+
+/*새 배너 영역*/
+.bird-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; 
+  width: 100%;
+  max-width: 1522px;
+  max-height: 441px;
+  margin: 91px 10px;
+  padding: 38px 120px;
+  background-color: #4E4949;
+}
+
+.bi-text {
+  flex: 1;
+  text-align: left;
+}
+
+.bi-title {
+  font-size: 50px;     
+  font-weight: 800;
+  color: #fff; 
+  line-height: 1.1;
+  margin-bottom: 52px;
+}
+
+.bi-text02 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #BFBFBF; 
+  line-height: 1.6;
+}
+
+.bi-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /*이미지를 오른쪽 끝으로 붙임*/
+}
+
+.bi-img img {
+  width: 100%;
+  max-width: 558px;
+  height: 365px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/*햄스터 상품 판매 영역*/
+.hamster-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*한 줄에 똑같은 비율(1fr)로 2개 배치 */
+  gap: 81px; 
+  text-align: center;
+}
+
+.hamster-list .product-card {
+  /*flex: 1;*/
+  background-color: #DAF2DB;
+  border-radius: 10px;
+  padding: 20px 15px 20px 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 720 / 535; /*가로, 세로 비율 자동 계산*/
+  max-width: 720px; 
+}
+
+.hamster-area {
+  font-size: 28px;
+  color: #222;
+  width: 152px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  background-color: #fff;
+  border: 2px solid #F8C96A;
+  border-radius: 50px;
+  margin-bottom: 105px;
+}
+
+.hamster-title img {
+  width: 50px;
+  height: 50px;
+}
+
+/*햄스터 상품 가격표 스타일*/
+.hamster-table table {
+  width: 85%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.hamster-table td {
+  padding: 12px 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px dashed rgba(11, 146, 40, 0.479);
+}
+
+.hamster-table tr:last-child td {
+  border-bottom: none;
+}
+
+.hamster-table td:last-child {
+  text-align: right;
+}
+
+/*파충류 상품 판매 영역*/
+.reptile-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*한 줄에 똑같은 비율(1fr)로 2개 배치 */
+  gap: 81px; 
+  text-align: center;
+}
+
+.reptile-list .product-card {
+  /*flex: 1;*/
+  background-color: #DAF2DB;
+  border-radius: 10px;
+  padding: 20px 15px 20px 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 720 / 535; /*가로, 세로 비율 자동 계산*/
+  max-width: 720px; 
+}
+
+.reptile-area {
+  font-size: 28px;
+  color: #222;
+  width: 152px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  background-color: #fff;
+  border: 2px solid #58C55E;
+  border-radius: 50px;
+  margin-top: 91px;
+  margin-bottom: 105px;
+}
+
+.reptile-title img {
+  width: 50px;
+  height: 50px;
+}
+
+/*파충류 상품 가격표 스타일*/
+.reptile-table table {
+  width: 85%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.reptile-table td {
+  padding: 12px 5px;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 1px dashed rgba(11, 146, 40, 0.479);
+}
+
+.reptile-table tr:last-child td {
+  border-bottom: none;
+}
+
+.reptile-table td:last-child {
+  text-align: right;
+}
+
+/*동물 단체 이미지 영역*/
+.sub_bottom {
+  width: 100%;
+  height: 537px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 91px;
+  opacity: 0.75;
+}
+
+.sub_bottom > .img-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*object-fit: cover; */
+  z-index: 1;
+  /*object-position: 0 35%;*/
+  width: 100%;
+  height: 537px;
+  background: url(../img/sub03/animals.png);
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed;
+}
+
+.sub_bottom .title-box {
+  position: relative;
+  z-index: 2;
+  color: #000; 
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px); /*뒤 배경을 흐리게 함*/
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.sub_bottom h3 {
+  font-size: 75px;
+  font-weight: 800;
+  margin-bottom: 48px;
+}
+
+.sub_bottom p {
+  font-size: 35px;   
+  line-height: 1.6;       
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/*TOP 버튼(클릭시 맨 위로 이동)*/
+#top_btn {
+  position: fixed; /*화면에 고정*/
+  bottom: 40px;
+  right: 40px; 
+  z-index: 1000;
+  cursor: pointer;
+  scroll-behavior: smooth; /*부드럽게 올라가는 효과*/
+}
+
+#top_btn img {
+  width: 70px;
+  height: 70px;
+  display: block;
+}
+
+/*푸터영역*/
+footer {
+  background-color: #D9D9D9; 
+  padding: 18px 0 36px 35px;
+  line-height: 1.7;
+  margin-top: 90px;
+}
+
+.footer-inner {
+  max-width: 1920px;
+}
+
+.footer-logo {
+  display: block;
+  width: 302px;
+  height: 123px;
+}
+
+.footer-area p {
+  font-weight: 400;
+  color: #666464;
+  font-size: 13px;
+}
+
+.service {
+  font-size: 23px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 4%;
+  padding-bottom: 29px;
+  display: flex;
+  flex-direction: column;/*세로로 정렬*/
+}
+
+.service span {
+  font-size: 10px;
+  font-weight: normal;
+  color: #666464;
+  margin-left: 110px;
+}
+
+/*하단 메뉴 가로 배치*/
+.footer-menu {
+  display: flex;
+  list-style: none;
+  border-top: 3px solid #C7C7C7;
+  padding-top: 14px;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.footer-menu li a {
+  color: #333;
+  position: relative;
+}
