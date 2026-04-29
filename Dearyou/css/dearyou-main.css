@@ -51,7 +51,6 @@ body {
 /*헤더 영역*/
 .header {
   width: 100%;
-  max-width: 1920px;
   height: 166px;
   /*background-color: lightskyblue;*/
   position: relative;
@@ -59,30 +58,24 @@ body {
 
 .header_inner {
   display: flex;
-  /*justify-content: space-between;*/
-  align-items: center;
-  padding: 20px 40px;
+  align-items: center; 
+  justify-content: flex-start;
+  padding: 0 10%;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .header_inner img {
   width: 150px;
-  height: 150px;
-  /*padding-left: 270px;*/
-  /*margin-top: -70px;*/
-}
-
-.header_inner a {
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.header_inner a img {
-  transform: translateY(-42px);
+  height: auto;
 }
 
 /*검색창*/
 .search-form {
-  margin: -80px 290px 0 -25px; /*위, 오른쪽, 아래, 왼쪽*/
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: 10px;
 }
 
 .search-box {
@@ -126,7 +119,7 @@ body {
 
 .topmenu {
   display: flex;
-  margin: 10px 220px 120px auto; /*위, 오른쪽, 아래, 왼쪽*/
+
   gap: 25px; /*버튼 간 간격 조절*/
 }
 
@@ -146,8 +139,7 @@ body {
 }
 
 .gnb {
-  position: relative;
-  top: -100px;
+  position: static;
   text-align: center;
   padding: 15px 0;
   margin-top: 18px;
@@ -211,16 +203,20 @@ body {
 
 /*메인 상단*/
 .intro {
-  height: 754px;
+  /*height: 754px;*/
+  padding: 100px 0;
   display: flex;
   /*justify-content: center;*/
   align-items: center;
+  gap: 40px;
 }
 
 .in-left img {
-  width: 638px;
-  height: 434px;
-  padding: 120px 300px 130px 300px;
+  width: 100%;
+  max-width: 638px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .in-right1, .in-right2 {
@@ -231,16 +227,21 @@ body {
 }
 
 .in-right1 {
-  margin-left: -240px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
 }
 
 .in-right2 {
-  margin-top: 29px;
+  display: flex;
 }
 
 /*이런분들께 추천드려요!!!*/
 .recommend {
   width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
   /*background-color: lightgreen;*/
 }
 
@@ -301,7 +302,8 @@ body {
 
 /*이벤트 배너영역*/
 .event-banner {
-  width: 1320px;
+  width: 100%;
+  max-width: 1320px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -329,10 +331,6 @@ body {
 }
 
 /*'디어유'의 신메뉴를 소개합니다.*/
-.new-menu {
-  /*position: relative;*/
-}
-
 .new-title {
   padding-top: 80px;
   padding-bottom: 110px;
@@ -359,22 +357,38 @@ body {
 }
 
 .new-menu1 {
-  width: 1034px;
-  height: 500px;
-  /*background-color: lightblue;*/
-  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: 500px 1fr; /*왼쪽 500px 고정, 오른쪽 나머지 전체*/
+  grid-template-areas: 
+    "img title"
+    "img desc";
+  column-gap: 50px;  
+  align-items: center;
+  margin-bottom: 80px;
 }
 
-.new-menu1 img {
-  float: left;
-  margin-right: 49px;
-}
-.new-menu1 img, .new-menu2 img {
-  width: 500px;
-  height: 500px;
+/*두 번째 메뉴: 텍스트(왼쪽) + 이미지(오른쪽) */
+.new-menu2 {
+  display: grid !important;
+  grid-template-columns: 1fr 500px; /*왼쪽 나머지 전체, 오른쪽 500px 고정*/
+  grid-template-areas: 
+    "title img"
+    "desc img";
+  column-gap: 50px;
+  align-items: center;
+  margin-bottom: 80px;
 }
 
-.new-menu1 h3, .new-menu2 h3{
+.new-menu1 img, .new-menu2 img { 
+  grid-area: img; 
+  width: 500px; 
+  height: 500px; 
+}
+
+.new-menu1 h3, .new-menu2 h3 { 
+  grid-area: title; 
+  align-self: end; /*제목을 아래쪽(설명글 방향)으로 붙임*/
+  margin-bottom: 10px;
   font-size: 20px;
   font-family: 'Cafe24Gowoonbam';
   font-weight: 800;
@@ -382,41 +396,47 @@ body {
   color: #333;
 }
 
-.new-menu1 p, .new-menu2 p {
+.new-menu1 p, .new-menu2 p { 
+  grid-area: desc; 
+  align-self: start; /*설명을 위쪽(제목 방향)으로 붙임*/
   font-size: 14px;
   line-height: 180%;
   font-family: 'Cafe24Gowoonbam';
 }
 
-.new-menu2 {
-  width: 1064px;
-  height: 500px;
-  /*background-color: lightgreen;*/
-  margin: 0 auto;
+.new-menu1, .new-menu2 {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  max-width: 1064px;
+  height: auto;
+  margin: 0 auto 80px;
   position: relative;
 }
 
-.new-menu2 img {
-  float: right;
-  margin-left: 49px;
+.new-menu2 {
+  flex-direction: row-reverse; /*이미지와 텍스트 순서 바꿈*/
 }
 
-.new-menu2 h3 {
-  position: absolute;
-  top: 80%;
+.new-menu1 img, .new-menu2 img {
+  width: 500px;
+  flex-shrink: 0; /*이미지 크기 고정*/
 }
 
-.new-menu2 p {
-  position: absolute;
-  top: 90%;
+.new-menu1 img { 
+  margin-right: 49px; 
+}
+
+.new-menu2 img { 
+  margin-left: 49px; 
 }
 
 /*이번주 추천 메뉴*/
 .week-rec {
   width: 100%;
-  /*height: 644px;*/
   text-align: center;
-  position: relative;
+  position: relative; 
+  margin: 0 auto;
 }
 
 .rec-title {
@@ -447,8 +467,9 @@ body {
 
 .rec-wrapper {
   overflow: hidden;
-  width: 1530px;
+  width: 1220px;
   margin: 0 auto 100px;
+  position: relative;
 }
 
 /*움직이는 레일*/
@@ -534,31 +555,27 @@ body {
   margin: 0 130px;
 }*/
 
-.week-rec .week-btn01 {
-  width: 35px;
-  height: 35px;
-  /*border: 1px solid;*/
-  background-image: url(../img/main/left.png);
-  background-size: cover;
-  background-position: center;
+.week-btn01, .week-btn02 {
   position: absolute;
-  top: 300px;
-  left: 90px;
+  top: 60%; 
+  transform: translateY(-50%);
   cursor: pointer;
+  z-index: 10;
+  width: 50px;  
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.week-rec .week-btn02 {
-  width: 35px;
-  height: 35px;
-  /*border: 1px solid;*/
-  background-image: url(../img/main/right.png);
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 300px;
-  right: 90px;
-  padding: 0;
-  cursor: pointer;
+.week-btn01 {
+  left: -80px;
+  background-image: url('../img/main/left.png'); 
+}
+
+.week-btn02 {
+  right: -80px; 
+  background-image: url('../img/main/right.png'); 
 }
 
 /*고객들의 후기*/
@@ -664,10 +681,6 @@ body {
 }
 
 /*이런날엔 이렇게*/
-.daily {
-  /*display: flex;
-  justify-content: center;*/
-}
 
 .daily-title {
   padding-top: 70px;
@@ -710,15 +723,8 @@ body {
   margin-bottom: 40px;
 }
 
-.icon img:hover {
-  border: 4px solid #04770a;
-  width: 440px;
-  height: 300px;
-  cursor: pointer;
-}
-
 .icon p {
-  font-size: 23px;
+  font-size: 22px;
   font-family: 'Cafe24Gowoonbam';
 }
 
@@ -780,8 +786,16 @@ body {
   opacity: 0.7;
 }
 
+.header_inner, .intro, .recommend, .new-menu, .week-rec, .review, .daily, .message {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 /*푸터영역*/
 footer {
+  width: 100%;
+  box-sizing: border-box; /*패딩값까지 포함 시키기 - 가로 스크롤 방지*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -818,4 +832,517 @@ footer {
   background-color: #FFAB91;
   padding: 5px 20px 5px;
   border-radius: 5px;
+}
+
+/*반응형 웹 - 태블릿*/
+@media (max-width: 768px) {
+
+  html, body {
+    width: 100vw !important;
+    overflow-x: hidden !important; /*가로 스크롤 방지*/
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    height: auto;
+  }
+
+  .header_inner {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center; 
+    justify-content: center;
+  }
+
+  .search-form {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .search-box {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .topmenu {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .gnb ul {
+    gap: 30px;
+    padding: 0;
+  }
+
+  .intro {
+    flex-direction: column;
+    padding: 50px 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .in-left img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    padding: 0;
+    margin: 0 auto 30px;
+    display: block;
+  }
+
+  .in-right1, .in-right2 {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px; 
+  }
+
+  .event-banner {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .slide li {
+    min-width: 100%; /*슬라이드 한 칸이 화면에 딱 맞게 설정*/
+  }
+
+  .slide img {
+    height: auto; 
+    max-height: 450px;
+    object-fit: cover;
+  }
+
+  /*이런분들께 추천드려요*/
+  .recommend-box h3 {
+    font-size: 25px;
+  }
+
+  .re-imgbox {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .imgbox img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /*신메뉴*/
+  .new-menu {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .new-title p {
+    font-size: 25px;
+    display: inline-block !important; /*글자 길이만큼만 줄이 생기게 함*/
+    width: auto !important; /*줄이 화면 끝까지 가지 않도록 설정*/
+  }
+
+  .new-menu1, .new-menu2 {
+    display: flex !important;
+    flex-direction: column !important; /*이미지가 위, 글자가 아래로*/
+    width: 100% !important;
+    margin-bottom: 50px !important;
+    align-items: center !important;
+    gap: 15px !important;
+    position: static !important;
+  }
+
+  .new-menu1 img, .new-menu2 img {
+    width: 100% !important;
+    max-width: 500px; 
+    height: auto !important;
+    margin: 0 !important;
+    border-radius: 15px;
+  }
+
+  .new-menu1 h3, .new-menu2 h3 {
+    width: 100% !important;
+    font-size: 18px !important; 
+    text-align: center !important; 
+    margin: 10px 0 5px 0 !important;
+    word-break: keep-all; /*한글 단어 단위 줄바꿈*/
+  }
+
+  .new-menu1 p, .new-menu2 p {
+    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    color: #666;
+    margin: 0 !important;
+    word-break: keep-all;
+  }
+
+  /*이번주 추천메뉴*/
+ .rec-wrapper {
+    width: 100%;
+    overflow-x: auto; /*가로 스크롤*/
+    overflow-y: hidden;
+    white-space: nowrap; /*자식 요소들 줄바꿈X*/
+    padding: 20px 0 !important;
+    -webkit-overflow-scrolling: touch; /*부드러운 스크롤*/
+    scroll-snap-type: x mandatory; /*스크롤 시 이미지 단위로 걸리게 설정*/
+  }
+
+  .rec-title p {
+    font-size: 25px;
+    display: inline-block !important; /*글자 길이만큼만 줄이 생기게 함*/
+    width: auto !important; /*줄이 화면 끝까지 가지 않도록 설정*/
+  }
+
+  .rec-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rec-slide {
+    display: flex !important;
+    flex-direction: row !important;
+    width: max-content !important; 
+    transform: none !important; /*자바스크립트 슬라이드 효과 강제 해제*/
+    gap: 15px !important;
+    padding-left: 20px; 
+    padding-right: 20px;
+  }
+
+  .rec-img {
+    display: inline-block !important;
+    flex-shrink: 0; /*크기가 줄어들지 않게 설정*/
+    width: 260px !important;
+    height: auto !important;
+    scroll-snap-align: center; /*스크롤 정지 시 중앙에 위치*/
+    position: relative;
+  }
+
+  .rec-img img {
+    width: 100% !important;
+    height: 300px !important;
+    margin-bottom: 10px !important;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+
+  .rec-img:nth-child(n+6) { 
+    display: none !important;  /*중복 이미지 제거하고 원래 이미지만 보여주게 설정*/
+  }
+
+  .week-btn01, .week-btn02 {
+    display: none !important; /*화살표 버튼 숨기기*/
+  }
+
+  /*고객들의 후기*/
+  .review-title p {
+    font-size: 25px;
+    display: inline-block !important; /*글자 길이만큼만 줄이 생기게 함*/
+    width: auto !important; /*줄이 화면 끝까지 가지 않도록 설정*/
+  }
+
+  .wrap {
+    width: 95%;
+    height: auto;
+  }
+
+  .review-container {
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    align-items: center;
+  }
+
+  .review-container > img {
+    width: 95%;
+    max-width: 360px;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .review-box {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  /*이런날엔 이렇게*/
+  .daily-title p {
+    font-size: 25px;
+    display: inline-block !important; /*글자 길이만큼만 줄이 생기게 함*/
+    width: auto !important; /*줄이 화면 끝까지 가지 않도록 설정*/
+  }
+
+  .icon_box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon img {
+    width: 90%;
+    max-width: 280px;
+    height: auto;
+  }
+
+  .icon_box p {
+    font-size: 18px;
+  }
+
+  /*Dear.you*/
+  .message-title p {
+    font-size: 25px;
+    display: inline-block !important; /*글자 길이만큼만 줄이 생기게 함*/
+    width: auto !important; /*줄이 화면 끝까지 가지 않도록 설정*/
+  }
+
+  .message-box h3 {
+    font-size: 30px;
+  }
+
+  /*푸터*/
+  footer {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .footer_right {
+    margin-right: 0;
+    margin-top: 30px;
+    align-self: center;
+  }
+
+  .footer_right ul {
+    justify-content: center;
+  }
+}
+
+/*반응형 웹 - 모바일*/
+@media (max-width: 480px) {
+
+  .topmenu a {
+    font-size: 12px;
+  }
+
+  .header_inner {
+    padding: 15px 10px !important;
+  }
+
+  .gnb ul {
+    gap: 15px;
+  }
+
+  .gnb ul li a {
+    font-size: 14px;
+  }
+
+  .in-right1, .in-right2 {
+    font-size: 15px !important;
+    line-height: 1.6;
+  }
+
+  .in-left img {
+    width: 95% !important;
+    margin-bottom: 20px !important;
+  }
+  
+  /*이런분들께 추천드려요*/
+
+  .recommend-box h3 {
+    font-size: 20px;
+  }
+
+  .re-text {
+    font-size: 14px;
+  }
+
+  /*이벤트 배너*/
+  .event-banner {
+    width: 100% !important;
+    max-width: 100vw !important; 
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .slide {
+    display: flex !important;
+    width: auto !important; /*자바스크립트가 계산하는 너비 무시*/
+  }
+
+  .slide li {
+    min-width: 100vw !important; /*한 칸이 정확히 화면 너비만큼 차지*/
+    width: 100vw !important;
+    list-style: none;
+  }
+
+  .slide img {
+    width: 100% !important;
+    height: auto !important; 
+    max-height: 300px; 
+    object-fit: cover;
+    display: block;
+  }
+
+  /*신메뉴*/
+  .new-menu {
+    width: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .new-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .new-title p {
+    width: auto !important;
+    font-size: 20px !important;
+    margin-top: 10px;
+    border-bottom: none;
+  }
+
+  .new-title img {
+    width: 18px !important;
+    height: auto !important;
+    margin-right: 8px !important;
+  }
+
+  .new-menu1, .new-menu2 {
+    display: flex !important;
+    flex-direction: column !important; /*이미지가 위, 글자가 아래로*/
+    width: 100% !important;
+    margin-bottom: 50px !important;
+    align-items: center !important;
+    gap: 15px !important;
+    position: static !important;
+  }
+
+  .new-menu1 img, .new-menu2 img {
+    width: 100% !important;
+    max-width: 400px; 
+    height: auto !important;
+    margin: 0 !important;
+    border-radius: 15px;
+  }
+
+  .new-menu1 h3, .new-menu2 h3 {
+    width: 100% !important;
+    font-size: 18px !important; 
+    text-align: center !important; 
+    margin: 10px 0 5px 0 !important;
+    word-break: keep-all; /*한글 단어 단위 줄바꿈*/
+  }
+
+  .new-menu1 p, .new-menu2 p {
+    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: left !important;
+    color: #666;
+    margin: 0 !important;
+    word-break: keep-all;
+  }
+
+  /*이번주 추천 메뉴*/
+
+  .rec-title p {
+    font-size: 20px;
+    width: auto !important;
+    border-bottom: none;
+  }
+  .rec-title img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .rec-img {
+    width: 200px !important;
+  }
+
+  .rec-img img {
+    height: 220px !important;
+  }
+
+  /*디어유 고객들의 후기*/
+  .review-title p {
+    font-size: 20px;
+    display: inline-block !important;
+    width: auto !important;
+    border-bottom: none;
+  }
+
+  .review-title img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .review-box {
+   width: 85%;
+  }
+
+  .review-container img {
+    width: 280px;
+    height: auto;
+  }
+
+  .review_btn {
+    display: none;
+  }
+
+  /*이런날엔 이렇게*/
+  .daily-title p {
+    font-size: 20px;
+    width: auto !important;
+    border: none;
+  }
+
+  .daily-title img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon img {
+    width: 70% !important;
+  }
+
+  .icon p {
+    font-size: 16px !important;
+  }
+
+  .message-box h3 {
+    font-size: 25px !important;
+  }
+
+  /*dear.you*/
+  .message-title p {
+    font-size: 20px;
+    width: auto !important;
+    border-bottom: none;
+  }
+
+  .message-title img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .message-box img {
+    width: 80% !important;
+  }
+
+  /*푸터*/
+  .footer_left ul li {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .footer_right ul li {
+    font-size: 10px;
+  }
 }
