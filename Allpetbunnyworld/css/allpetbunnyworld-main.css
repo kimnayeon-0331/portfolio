@@ -34,32 +34,29 @@ header {
   top: 0;
   left: 0;
   width: 100%; 
-  height: 80px;
+  height: auto;
+  min-height: 80px;
   z-index: 1000; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 4%;
   background: #FAF9F6;
-}
-
-.logo {
-  /*background-color: lightgoldenrodyellow;*/
-  padding-left: 15px;
+  flex-wrap: wrap; /*내용이 많아지면 다음줄로 넘어가게 하기 위해서*/
 }
 
 .logo img {
-  display: block;
   height: 61px; 
   width: 270px;
+  max-width: 100%;
   object-fit: cover;
 }
 
-/* Aside: 검색창과 버튼 정렬 */
+/*Aside: 검색창과 버튼 정렬*/
 aside {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 16px;
   /*background-color: lightseagreen;*/
 }
 
@@ -71,10 +68,9 @@ aside a {
 .search-form {
   display: flex;
   border-radius: 7px;
-  width: 271px;
-  height: 45px;
+  width: 220px;
+  height: 40px;
   border: 4px solid #A0C8F5;
-  margin-top: 10px;
 }
 
 .search-form img {
@@ -101,9 +97,9 @@ aside a {
 }
 
 section {
-  margin-top: 171.5px;
-  height: 80px;
+  margin-top: 100px;
   display: flex;
+  flex-wrap: wrap; /*사이드바와 본문이 겹치지 않도록 하기 위해*/
 }
 
 nav {
@@ -168,8 +164,28 @@ section {
   flex: 1;
 }
 
-article{
-  margin-left: 55px;
+article {
+  flex: 1;
+  min-width: 0; /*내부 요소때문에 박스가 터지는것 방지하기 위해*/
+  margin-left: 20px;
+}
+
+article video {
+  width: 100%;
+  height: 630px;
+  display: flex;
+  object-fit: cover;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/*영상이 스르륵 나타나게 설정*/
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
 }
 
 /*베스트셀러*/
@@ -191,6 +207,7 @@ article{
   display: flex;
   gap: 24px;
   align-items: stretch; /*자식들의 높이를 강제로 맞춤*/
+  flex-wrap: wrap;
 }
 
 .left-item, .item {
@@ -324,8 +341,7 @@ article{
 /*왼쪽 큰 상품 너비 설정, 왕관 위치 설정*/
 .left-item {
   flex: 0.5;
-  position: relative;
-  overflow: visible;
+  min-width: 300px;
 }
 
 .best {
@@ -349,6 +365,7 @@ article{
   flex-wrap: wrap; /*자리가 없으면 다음 줄로 이동*/
   column-gap: 16px; /*가로 간격*/
   row-gap: 64px; /*세로 간격*/
+  min-width: 300px;
 }
 
 .right-item .item:nth-child(1) img {
@@ -423,7 +440,7 @@ article{
   display: flex;
   gap: 105px;
   justify-content: space-between;
-  padding: 70px 30px;
+  padding: 50px 30px;
 }
 
 /*개별 리뷰 박스*/
@@ -469,15 +486,13 @@ article{
   font-size: 14px;
   color: #777;
   line-height: 1.4;
-  margin-bottom: 29px;
+  margin-bottom: 8px;
   font-weight: 400;
-  min-height: 36px; 
 }
 
 .star {
   color: #FF5A79;
-  font-size: 24px;
-  letter-spacing: -8%;
+  font-size: 14px;
 }
 
 /*신상품*/
@@ -1019,4 +1034,779 @@ footer {
 .footer-menu li a {
   color: #333;
   position: relative;
+}
+
+/*반응형 웹(화면이 1600px 미만일 때*/
+@media (max-width: 1600px) {
+  #bestseller, #review, #new-arrival, #event-banner, #health-magazine {
+    width: 85%;
+  }
+}
+
+/*반응형 웹(화면이 900px 미만일 때*/
+@media (max-width: 900px) {
+  header {
+    height: auto; 
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo img {
+    width: 180px;
+  }
+
+  aside {
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .search-form {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .search-form input {
+    width: 100%;
+    padding-right: 35px;
+    margin-left: 10px;
+    font-size: 13px;
+  }
+
+  section {
+    flex-direction: column;
+    margin-top: 180px; /*헤더가 두 줄이 되었을 때를 대비해 여백 확보*/
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    position: static; /*sticky 해제*/
+    margin-left: 0;
+    padding: 10px 0;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    gap: 20px;
+  }
+
+  nav h2 {
+    display: none;
+  }
+
+  /*메인메뉴 호버효과 제거*/
+  nav a:nth-of-type(1):hover,
+  nav a:nth-of-type(2):hover,
+  nav a:nth-of-type(3):hover {
+    color: #333 !important;     
+    font-weight: 500 !important; 
+    font-size: 16px !important;   
+    background-color: transparent !important; 
+    transform: none !important;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 16px;
+    white-space: nowrap; /*글자가 두 줄로 꺾여서 겹치는 것 방지*/
+  }
+
+  nav a img {
+    width: 30px;
+  }
+
+  article {
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
+  }
+
+  article video {
+    height: 340px;
+  }
+
+  #bestseller, #review, #new-arrival, #health-magazine, .photo-container {
+    max-width: 100% !important; /*고정 너비를 강제로 해제 - 가로스크롤 방지*/
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .left-item {
+    height: auto; 
+    max-height: 450px;
+    margin-left: 60px;
+    margin-top: 85px;
+  }
+
+  .left-item img {
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .best {
+    position: absolute;
+    top: -80px; 
+    left: -70px;
+    width: 150px; 
+  }
+
+  .best img {
+    width: 100px;
+    height: auto;
+  }
+
+  .right-item {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px; 
+    row-gap: 15px;
+  }
+
+  #review {
+    max-width: 800px;   
+    margin: 80px auto;  
+    padding: 20px;
+  }
+
+  .review-list {
+    display: flex;
+    flex-wrap: nowrap; 
+    gap: 15px;
+    padding: 20px 10px;
+    justify-content: space-between;
+  }
+
+  .review-box {
+    /*(100% - 간격들) / 4*/
+    width: calc(25% - 12px); 
+    flex: none; 
+  }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 10px;
+  }
+
+  .info h4 {
+    font-size: 13px;
+    word-break: keep-all; 
+  }
+
+  .review-list .review-box:nth-of-type(4) h4 {
+    font-size: 13px !important;
+  }
+  
+  .info p {
+    font-size: 11px;
+    line-height: 1.2;
+    overflow: hidden;
+  }
+
+  .star {
+    font-size: 10px;
+  }
+
+  .new-box .text-box p {
+    font-size: 11px !important;
+    margin-bottom: 5px;
+    color: #888;
+  }
+
+  .new-box .text-box h4 a {
+    font-size: 14px !important;
+    line-height: 1.3;
+    display: block;
+  }
+
+  .new-box .text-box h4 {
+    margin: 0;
+    min-height: 36px;
+  }
+
+  .new-overlay .price {
+    font-size: 14px !important;
+  }
+
+  #event-banner {
+    display: flex;        
+    gap: 10px; 
+    height: 200px;  
+    margin: 0 auto; 
+  }
+
+  .left-event, .right-event {
+    flex: 1;              
+    height: 100%;      
+  }
+
+  #event-banner img {
+    width: 100%;  
+    height: 100% !important; 
+    object-fit: contain;   
+  }
+
+  #health-magazine {
+    max-width: 850px; 
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  .magazine-box {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .health01, .health02, .health03 {
+    width: calc(33.33% - 10px);
+    overflow: hidden;
+  }
+
+  .magazine-box img {
+    width: 100%;
+    height: 180px !important;
+    object-fit: cover !important;
+    max-width: 100%;
+    display: block;
+  }
+
+  .magazine-box p {
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+
+  .magazine-box p a {
+    font-size: 14px !important;
+    font-weight: 500;
+  }
+
+  .magazine-box .view {
+    display: none !important;
+  }
+
+  #brand-story {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;  
+    padding: 60px 20px; 
+    gap: 30px;
+  }
+
+  .story-box {
+    width: 100%;
+    max-width: 500px; 
+    margin: 0 auto;
+  }
+
+  .story-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; 
+    object-fit: cover;
+  }
+
+  .story-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 0; 
+  }
+
+  .story-content span {
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+    color: #888;
+  }
+
+  .story-content h3 {
+    font-size: 26px !important; 
+    line-height: 1.4;
+    margin-bottom: 20px;
+    word-break: keep-all; 
+  }
+
+  .story-content p {
+    font-size: 15px !important;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    word-break: keep-all;
+  }
+
+  .btn-more {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+  }
+
+  .photo-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(2, 180px); /*2줄 높이 고정*/
+    gap: 10px;
+    padding: 10px;
+    margin-top: 40px;
+  }
+
+  .img-box:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 100% !important;
+  }
+
+  .img-box {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  .tag {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  #notice {
+    height: 50px;
+    margin: 40px auto 0;
+    padding: 0 15px;
+  }
+
+  .notice-head h3 {
+    font-size: 16px !important;
+    margin: 0;
+  }
+
+  .controls {
+    width: 25px;
+    height: 25px;
+    gap: 3px;
+  }
+
+  .controls img { 
+    width: 100%; 
+  }
+
+  .notice-slider {
+    height: 30px; 
+    margin-left: 20px; 
+  }
+
+  .notice-slider li {
+    height: 30px;
+    line-height: 30px; 
+  }
+
+  .notice-slider a {
+    font-size: 14px !important;
+    font-weight: 400;
+  }
+
+  .notice-slider ul {
+    animation: rolling-mobile 16s infinite; /*모바일 전용 애니메이션 연결*/
+  }
+
+  footer {
+    padding: 40px 20px;  
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: left; 
+    gap: 25px; 
+  }
+
+  .footer-logo {
+    width: 120px; 
+    height: auto;
+  }
+
+  .footer-area p {
+    font-size: 12px !important;
+    line-height: 1.8; 
+    word-break: keep-all; 
+  }
+
+  .service {
+    font-size: 14px !important;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .service span {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    color: #888;
+    margin-top: 5px;
+    margin-left: 60px;
+  }
+
+  .footer-menu {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .footer-menu li {
+    font-size: 12px !important;
+  }
+
+  /*구분선(ㅣ)*/
+  .footer-menu li:nth-child(even) {
+    font-size: 10px;
+    color: #ddd;
+    margin: 0 2px;
+  }
+}
+
+@keyframes rolling-mobile {
+  0%, 15% { transform: translateY(0); } /*1번 글*/
+  20%, 35% { transform: translateY(-30px); } /*2번 글 (-30 * 1)*/
+  40%, 55% { transform: translateY(-60px); } /*3번 글 (-30 * 2)*/
+  60%, 75% { transform: translateY(-90px); } /*4번 글 (-30 * 3)*/
+  80%, 95% { transform: translateY(-120px); } /*5번 글 (-30 * 4)*/
+  100% { transform: translateY(-150px); } /*복귀용 (-30 * 5)*/
+
+}
+
+/*반응형 웹(화면이 540px 미만일 때)*/
+@media (max-width: 540px) {
+  * {
+    box-sizing: border-box ;
+  }
+
+  html, body {
+    width: 100%;
+    overflow-x: hidden; /*페이지 전체 가로 스크롤 방지*/
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  .logo { 
+    text-align: center; width: 100%; 
+  }
+
+  .logo img { 
+    width: 150px; 
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  /*검색창만 나타나게 설정*/
+  .search-form {
+    display: block !important;
+    width: 50% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  .search-form input {
+    padding: 0 40px 0 15px;
+    box-sizing: border-box;
+  }
+
+  .search-form img {
+    position: absolute; 
+    right: 25%; 
+    top: 65%;
+  }
+
+  /*로그인, 회원가입, 장바구니, 공지사항 등 앵커태그 메뉴만 숨김*/
+  aside a, 
+  aside div:not(.search-form) {
+    display: none !important;
+  }
+
+  nav a {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  section {
+    margin-top: 180px;
+  }
+
+  article video {
+    height: 180px; 
+  }
+
+  #bestseller h3, #new-arrival h3, #health-magazine h3 {
+    font-size: 18px !important;
+  }
+
+  #bestseller {
+    padding: 30px 0 !important;
+    overflow: hidden !important;
+  }
+
+  .item-info {
+    font-size: 10px;
+  }
+
+  /*제품 리스트 가로 스크롤 설정*/
+  .right-item {
+    display: flex !important;
+    flex-wrap: nowrap !important; /*한 줄로 강제*/
+    overflow-x: auto !important;  /*가로 스크롤 활성화*/
+    padding: 0 15px 15px !important;
+    gap: 10px !important;
+    -webkit-overflow-scrolling: touch; /*스크롤바 제어*/
+  }
+
+  .left-item {
+    display: none !important;
+  }
+
+  /*스크롤바 숨기기*/
+  .right-item::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  .right-item .item {
+    flex: 0 0 130px !important; 
+  }
+
+  .right-item .item img {
+    width: 100% !important;
+    height: 130px !important; 
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .right-item .item h4 {
+    font-size: 12px !important;
+    margin-top: 8px !important;
+    height: 32px;
+    overflow: hidden;
+  }
+
+  .right-item .item p {
+    font-size: 12px !important;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .view-more {
+    display: block ;   
+    width: 60% ;
+    max-width: 400px; 
+    margin: 20px auto;
+    font-size: 14px; 
+    text-align: center;
+  }
+
+  .info h4 {
+    font-size: 11px;
+    word-break: keep-all;
+  }
+
+  .review-list .review-box:nth-of-type(4) h4 {
+    font-size: 11px !important;
+  }
+
+  .info p {
+    font-size: 10px;
+  }
+
+  #new-arrival {
+    width: 100%;
+    overflow: hidden ;
+    padding: 20px 0;
+  }
+
+  #new-arrival .new-list { 
+    display: flex;
+    flex-wrap: nowrap; 
+    flex-direction: row;   
+    justify-content: space-between; 
+    width: 100%;
+    padding: 0 10px; 
+    gap: 6px; 
+  }
+
+  .new-box {
+    /*(전체 100% / 4개) - 간격 보정*/
+    width: calc(25% - 5px); 
+    flex: 1 1 0;
+    min-width: 0;  
+    display: block;
+  }
+
+  .new-box .img-box {
+    width: 100%;
+    height: auto; 
+    aspect-ratio: 1 / 1;  
+    margin-bottom: 8px;
+  }
+
+  .new-box .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .new-box .text-box {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .new-box .text-box h4 a, 
+  .new-box .text-box p,
+  .new-box .price {
+    font-size: 11px !important;  
+    display: block;
+    white-space: nowrap;    
+    overflow: hidden;  
+    text-overflow: ellipsis; /*글자 넘치면 ...처리*/
+    margin: 2px 0;
+  }
+
+  #event-banner {
+    display: flex;
+    gap: 10px;
+    height: 250px;
+    margin-top: -270px;
+  }
+
+  #health-magazine {
+    padding: 20px 10px;
+  }
+
+  
+  #health-magazine .magazine-box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px; 
+  }
+
+  #health-magazine .magazine-box > div {
+    flex: 1; 
+    min-width: 0; /*텍스트로 인해 박스가 커지는 것 방지*/
+  }
+
+  #health-magazine .magazine-box img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+  }
+
+  #health-magazine .magazine-box .view {
+    display: none;
+  }
+
+  #health-magazine .magazine-box p {
+    margin-top: 8px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  #health-magazine .magazine-box p a {
+    font-size: 10px;
+  }
+
+  #health-magazine .view-more {
+    display: block;
+    width: 100%;
+    margin: 20px auto 0;
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  #brand-story {
+    padding: 30px 15px;
+  }
+
+  .story-box {
+    max-width: 100%;
+  }
+
+  .story-box img {
+    width: 60%;
+  }
+
+  .story-content h3 {
+    font-size: 11px !important;
+    margin-top: 15px;
+  }
+
+  .story-content p {
+    font-size: 9px !important;
+    padding: 0 3px;
+  }
+
+  .btn-more {
+    font-size: 11px;
+  }
+
+  .photo-container {
+    grid-template-columns: repeat(2, 1fr); /*2열*/
+    grid-template-rows: repeat(3, 200); /*3줄*/
+  }
+
+  .img-box:nth-child(1) {
+    grid-column: span 1; /*큰 이미지 해제*/
+    grid-row: span 1;
+  }
+
+  .tag p {
+    font-size: 10px;
+    color: #fff;
+  }
+
+  .notice-head h3 {
+    font-size: 13px;
+  }
+
+  .notice-head .controls {
+    display: none;
+  }
+
+  .notice-slider a {
+    font-size: 12px;
+  }
+
+  .footer-area p {
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .service span {
+    margin-left: 0; 
+  }
+
+  .footer-menu {
+    gap: 5px;
+  }
+
+  .footer-menu li {
+    font-size: 11px !important;
+  }
 }
