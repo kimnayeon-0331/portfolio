@@ -56,7 +56,7 @@ header {
 aside {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 16px;
   /*background-color: lightseagreen;*/
 }
 
@@ -68,8 +68,8 @@ aside a {
 .search-form {
   display: flex;
   border-radius: 7px;
-  width: 271px;
-  height: 45px;
+  width: 220px;
+  height: 40px;
   border: 4px solid #A0C8F5;
   margin-top: 10px;
 }
@@ -271,6 +271,7 @@ article{
     cursor: pointer;
     border: none;
     line-height: 38px;
+    margin-bottom: 410px;
 }
 
 .back:hover {
